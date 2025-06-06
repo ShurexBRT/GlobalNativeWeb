@@ -1,0 +1,1 @@
+// JS logika za unos firme u Firestore
