@@ -1,1 +1,70 @@
-body { font-family: sans-serif; }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.hero {
+    background: url('../img/hero.jpg') no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.btn-cta {
+    background-color: #1A73E8;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.search-section {
+    background: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+.language-checkboxes label {
+    margin: 0 10px;
+}
+.top-rated {
+    padding: 40px 20px;
+    text-align: center;
+}
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 16px;
+    width: 250px;
+    border-radius: 8px;
+}
+.icon {
+    width: 32px;
+    height: 32px;
+}
+.how-it-works, .join {
+    padding: 40px 20px;
+    text-align: center;
+}
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.step img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
