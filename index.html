@@ -15,67 +15,61 @@
   </div>
 </header>
 
+<section class="search-section">
+  <form id="search-form">
+    <label for="category">Kategorija *</label>
+    <select name="category" id="category">
+      <option value="">-- Izaberi kategoriju --</option>
+    </select>
 
-  <section class="search-section">
-    <form id="search-form">
-      <select name="category">
-        <option value="advokat">Advokat</option>
-        <option value="doktor">Doktor opšte prakse</option>
-        <option value="pedijatar">Pedijatar</option>
-        <option value="stomatolog">Stomatolog</option>
-        <option value="veterinar">Veterinar</option>
-        <option value="knjigovođa">Knjigovođa</option>
-        <option value="frizer">Frizer</option>
-        <option value="restoran">Restoran</option>
-        <option value="kafić">Kafić</option>
-        <option value="moler">Moler</option>
-        <option value="električar">Električar</option>
-        <option value="vodoinstalater">Vodoinstalater</option>
-        <option value="auto-servis">Auto servis</option>
-        <option value="prevodilac">Prevodilac</option>
-        <option value="psiholog">Psiholog / Terapeut</option>
-      </select>
-      <label for="drzava">Država *</label>
-      <input type="text" id="drzava" name="drzava" placeholder="Unesite državu" required />
-      <label for="grad">Grad *</label>
-      <input type="text" id="grad" name="grad" placeholder="Unesite grad" required />
-      <div class="language-checkboxes">
-        <label><input type="checkbox" name="lang" value="serbian" checked />🇷🇸 Serbian</label>
-        <label><input type="checkbox" name="lang" value="croatian" />🇭🇷 Croatian</label>
-        <label><input type="checkbox" name="lang" value="bosnian" />🇧🇦 Bosnian</label>
-        <label><input type="checkbox" name="lang" value="english" />🇬🇧 English</label>
-        <label><input type="checkbox" name="lang" value="german" />🇩🇪 German</label>
-        <label><input type="checkbox" name="lang" value="russian" />🇷🇺 Russian</label>
-        <label><input type="checkbox" name="lang" value="ukrainian" />🇺🇦 Ukrainian</label>
-      </div>
-      <button type="submit">Search</button>
-    </form>
-  </section>
+    <label for="drzava">Država *</label>
+    <select id="drzava" name="drzava">
+      <option value="">-- Izaberi državu --</option>
+    </select>
 
-  <section class="top-rated">
-    <h2>Top-rated services near you</h2>
-    <div id="top-firme" class="card-grid">
-      <!-- Firms from firms.json will be injected here via JavaScript -->
+    <label for="grad">Grad *</label>
+    <select id="grad" name="grad">
+      <option value="">-- Izaberi grad --</option>
+    </select>
+
+    <div class="language-checkboxes">
+      <label><input type="checkbox" name="lang" value="serbian" checked />🇷🇸 Serbian</label>
+      <label><input type="checkbox" name="lang" value="croatian" />🇭🇷 Croatian</label>
+      <label><input type="checkbox" name="lang" value="bosnian" />🇧🇦 Bosnian</label>
+      <label><input type="checkbox" name="lang" value="english" />🇬🇧 English</label>
+      <label><input type="checkbox" name="lang" value="german" />🇩🇪 German</label>
+      <label><input type="checkbox" name="lang" value="russian" />🇷🇺 Russian</label>
+      <label><input type="checkbox" name="lang" value="ukrainian" />🇺🇦 Ukrainian</label>
     </div>
-  </section>
+    <button type="submit">Search</button>
+  </form>
+</section>
 
-  <section class="how-it-works">
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="step"><img src="assets/icons/find.png" alt="find icon" /><p>Find a service</p></div>
-      <div class="step"><img src="assets/icons/contact.png" alt="contact icon" /><p>Contact the provider</p></div>
-      <div class="step"><img src="assets/icons/review.png" alt="review icon" /><p>Leave a review</p></div>
-    </div>
-  </section>
+<section class="top-rated">
+  <h2>Top-rated services near you</h2>
+  <div id="top-firme" class="card-grid">
+    <!-- Firms from firms.json will be injected here via JavaScript -->
+  </div>
+</section>
 
-  <section class="join">
-    <h2>Join our network of service providers</h2>
-    <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
-  </section>
+<section class="how-it-works">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><img src="assets/icons/find.png" alt="find icon" /><p>Find a service</p></div>
+    <div class="step"><img src="assets/icons/contact.png" alt="contact icon" /><p>Contact the provider</p></div>
+    <div class="step"><img src="assets/icons/review.png" alt="review icon" /><p>Leave a review</p></div>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/search-handler.js"></script>
-  <script src="assets/js/script.js"></script>
+<section class="join">
+  <h2>Join our network of service providers</h2>
+  <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
+</section>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/form-init.js"></script> 
+<script src="assets/js/search-handler.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

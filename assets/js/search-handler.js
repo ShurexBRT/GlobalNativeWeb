@@ -7,20 +7,28 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const selectedCategory = form.category.value;
-    const selectedLanguages = Array.from(form.querySelectorAll("input[name='lang']:checked")).map(cb => cb.value.toLowerCase());
-    const grad = form.grad?.value?.toLowerCase();
-    const drzava = form.drzava?.value?.toLowerCase();
+    const selectedCategory = form.category.value.toLowerCase();
+    const selectedLanguages = Array.from(
+      form.querySelectorAll("input[name='lang']:checked")
+    ).map(cb => cb.value.toLowerCase());
+
+    const grad = form.grad?.value?.trim().toLowerCase() || "";
+    const drzava = form.drzava?.value?.trim().toLowerCase() || "";
 
     try {
       const res = await fetch("assets/company-list/firms.json");
       const data = await res.json();
 
-      const filtered = data.filter((firma) => {
-        const matchCategory = !selectedCategory || firma.kategorija === selectedCategory;
-        const matchLanguages = selectedLanguages.length === 0 || selectedLanguages.some(lang => firma.jezici.map(j => j.toLowerCase()).includes(lang));
-        const matchGrad = !grad || firma.grad.toLowerCase().includes(grad);
-        const matchDrzava = !drzava || firma.drzava.toLowerCase().includes(drzava);
+      const filtered = data.filter(firma => {
+        const kategorija = firma.kategorija?.toLowerCase() || "";
+        const jezici = firma.jezici?.map(j => j.toLowerCase()) || [];
+        const firmaGrad = firma.grad?.toLowerCase() || "";
+        const firmaDrzava = firma.drzava?.toLowerCase() || "";
+
+        const matchCategory = !selectedCategory || kategorija.includes(selectedCategory);
+        const matchLanguages = selectedLanguages.length === 0 || selectedLanguages.some(lang => jezici.includes(lang));
+        const matchGrad = !grad || firmaGrad.includes(grad);
+        const matchDrzava = !drzava || firmaDrzava.includes(drzava);
 
         return matchCategory && matchLanguages && matchGrad && matchDrzava;
       });
@@ -46,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (error) {
       console.error("Greška pri učitavanju firmi:", error);
+      resultsContainer.innerHTML = "<p>Greška pri učitavanju podataka.</p>";
     }
   });
 });
