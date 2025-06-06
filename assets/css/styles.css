@@ -124,10 +124,12 @@ textarea {
   border-radius: 8px;
 }
 .language-checkboxes {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
+  margin-top: 1rem;
 }
+
 
 /* KARTICE */
 .card-grid {

@@ -1,49 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-form");
-  const resultSection = document.querySelector(".top-rated .card-grid");
+  const resultsContainer = document.getElementById("top-firme");
 
-  if (!form || !resultSection) return;
+  if (!form || !resultsContainer) return;
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const selectedCategory = form.category.value;
-    const selectedLanguages = Array.from(
-      form.querySelectorAll("input[name='lang']:checked")
-    ).map((input) => input.value);
+    const selectedLanguages = Array.from(form.querySelectorAll("input[name='lang']:checked")).map(cb => cb.value.toLowerCase());
+    const grad = form.grad?.value?.toLowerCase();
+    const drzava = form.drzava?.value?.toLowerCase();
 
     try {
-      const res = await fetch("assets/data/companies.json");
-      const companies = await res.json();
+      const res = await fetch("assets/company-list/firms.json");
+      const data = await res.json();
 
-      const filtered = companies.filter((company) => {
-        const matchCategory = selectedCategory
-          ? company.kategorija === selectedCategory
-          : true;
-        const matchLanguage = selectedLanguages.length
-          ? company.jezici.some((lang) => selectedLanguages.includes(lang))
-          : true;
-        return matchCategory && matchLanguage;
+      const filtered = data.filter((firma) => {
+        const matchCategory = !selectedCategory || firma.kategorija === selectedCategory;
+        const matchLanguages = selectedLanguages.length === 0 || selectedLanguages.some(lang => firma.jezici.map(j => j.toLowerCase()).includes(lang));
+        const matchGrad = !grad || firma.grad.toLowerCase().includes(grad);
+        const matchDrzava = !drzava || firma.drzava.toLowerCase().includes(drzava);
+
+        return matchCategory && matchLanguages && matchGrad && matchDrzava;
       });
 
-      // Prikaz rezultata
-      resultSection.innerHTML = "";
+      resultsContainer.innerHTML = "";
 
       if (filtered.length === 0) {
-        resultSection.innerHTML = "<p>No matching companies found.</p>";
+        resultsContainer.innerHTML = "<p>No results found.</p>";
         return;
       }
 
-      filtered.forEach((company) => {
-        resultSection.innerHTML += `
-          <div class="card">
-            <img src="assets/icons/${company.ikonica}" alt="${company.kategorija} icon" class="icon">
-            <h3>${company.naziv}</h3>
-            <p>${company.grad} - ${company.jezici.map(lang => `🇺🇳 ${lang}`).join(', ')}</p>
-            <p>${company.opis || ""}</p>
-          </div>
+      filtered.forEach(firma => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="assets/icons/${firma.kategorija}.png" alt="${firma.kategorija}" class="icon" />
+          <h3>${firma.naziv}</h3>
+          <p>${firma.grad} – ${firma.jezici.join(", ")}</p>
+          <a href="profile.html?firma=${firma.id}" class="btn-cta">Vidi više</a>
         `;
+        resultsContainer.appendChild(card);
       });
+
     } catch (error) {
       console.error("Greška pri učitavanju firmi:", error);
     }
