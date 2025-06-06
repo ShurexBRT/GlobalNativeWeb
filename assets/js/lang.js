@@ -2,31 +2,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const langSwitcher = document.getElementById("lang-switcher");
   const langFilePath = (lang) => `assets/lang/${lang}.json`;
 
+  // Prevod svih elemenata sa data-i18n atributom
   function applyLocalization(data) {
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (data[key]) {
-        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-          el.placeholder = data[key];
-        } else {
-          el.textContent = data[key];
-        }
+        el.textContent = data[key];
       }
     });
   }
 
+  // Učitavanje prevoda
   function loadLang(lang) {
     fetch(langFilePath(lang))
       .then((res) => res.json())
-      .then(applyLocalization)
+      .then((data) => {
+        applyLocalization(data);
+      })
       .catch((err) => console.error("Greška pri učitavanju jezika:", err));
   }
 
-  langSwitcher.addEventListener("change", (e) => {
-    const selectedLang = e.target.value;
-    loadLang(selectedLang);
-  });
+  // Reaguje na izbor jezika
+  if (langSwitcher) {
+    langSwitcher.addEventListener("change", (e) => {
+      const selectedLang = e.target.value;
+      localStorage.setItem("lang", selectedLang); // zapamti izbor
+      loadLang(selectedLang);
+    });
+  }
 
-  // Default language
-  loadLang("sr");
+  // Učitaj jezik iz localStorage (ili default na sr)
+  const savedLang = localStorage.getItem("lang") || "sr";
+  if (langSwitcher) {
+    langSwitcher.value = savedLang;
+  }
+  loadLang(savedLang);
 });
