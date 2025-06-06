@@ -146,6 +146,26 @@ textarea {
   height: 40px;
   margin-bottom: 8px;
 }
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #0077b6;
+}
+
+.card:hover .btn-cta {
+  background-color: #00487a;
+  color: white;
+}
+
 
 /* STEP KORACI */
 .steps {
