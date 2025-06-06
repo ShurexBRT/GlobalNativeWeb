@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-form");
-  const resultsContainer = document.getElementById("top-firme");
+  const resultsContainer = document.getElementById("search-firme");
+  const searchSection = document.getElementById("search-results");
 
   if (!form || !resultsContainer) return;
 
@@ -33,10 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return matchCategory && matchLanguages && matchGrad && matchDrzava;
       });
 
+      // Prikazuj sekciju i resetuj rezultate
+      searchSection.style.display = "block";
       resultsContainer.innerHTML = "";
 
       if (filtered.length === 0) {
-        resultsContainer.innerHTML = "<p>No results found.</p>";
+        resultsContainer.innerHTML = "<p>Nema rezultata pretrage.</p>";
         return;
       }
 

@@ -262,4 +262,8 @@ textarea {
   text-decoration: underline;
 }
 
+#search-results h2 {
+  margin-bottom: 1rem;
+}
+
 }
