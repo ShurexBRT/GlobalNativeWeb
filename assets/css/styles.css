@@ -72,7 +72,6 @@ textarea {
   align-items: center;
   justify-content: center;
 }
-
 .hero::before {
   content: '';
   position: absolute;
@@ -82,7 +81,6 @@ textarea {
   background: rgba(0, 80, 160, 0.5);
   z-index: 1;
 }
-
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -90,17 +88,14 @@ textarea {
   padding: 20px;
   max-width: 800px;
 }
-
 .hero-overlay h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-
 .hero-overlay p {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-
 .hero-overlay .btn-cta {
   padding: 12px 24px;
   background-color: #ffffff;
@@ -112,6 +107,23 @@ textarea {
   text-decoration: none;
 }
 
+/* LANG SELECTOR */
+.lang-selector {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 999;
+}
+.lang-selector select {
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 /* PRETRAGA */
 .search-section form {
   display: flex;
@@ -121,7 +133,6 @@ textarea {
   padding: 20px;
   border-radius: 8px;
 }
-
 .language-checkboxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -140,32 +151,18 @@ textarea {
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.card img.icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 8px;
-}
-.card {
-  background: white;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   transform: translateY(0);
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border: 1px solid #0077b6;
 }
-
 .card:hover .btn-cta {
   background-color: #00487a;
   color: white;
 }
-
 
 /* STEP KORACI */
 .steps {
@@ -211,6 +208,7 @@ textarea {
   margin-top: 20px;
 }
 
+/* JOIN */
 .join {
   text-align: center;
   padding: 2rem;
@@ -235,55 +233,55 @@ textarea {
   background-color: #dcefff;
 }
 
+/* BREADCRUMB */
+.breadcrumb {
+  margin-bottom: 1rem;
+}
+.breadcrumb a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: bold;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* REZULTATI */
+#search-results h2 {
+  margin-bottom: 1rem;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-overlay h1 {
     font-size: 1.8rem;
   }
-
   .hero-overlay p {
     font-size: 1rem;
   }
-
   .search-section form,
   .top-rated .card,
   .join {
     padding: 1rem;
     text-align: center;
   }
-
   .card-grid {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-
   .steps {
     flex-direction: column;
     align-items: center;
   }
-
   input, select, textarea, button {
     width: 100%;
     max-width: 100%;
   }
-
-  .breadcrumb {
-  margin-bottom: 1rem;
 }
-
-.breadcrumb a {
-  color: #0077b6;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-#search-results h2 {
-  margin-bottom: 1rem;
-}
-
+@media (max-width: 480px) {
+  .lang-selector select {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+  }
 }
