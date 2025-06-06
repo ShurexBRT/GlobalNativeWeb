@@ -1,86 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Native Web</title>
+  <title data-i18n="pageTitle">Global Native Web</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+
 <header class="hero">
   <div class="hero-overlay">
-    <h1>Lokalne usluge na jeziku koji razumete</h1>
-    <p>Pronađite pouzdane profesionalce u vašem okruženju</p>
-
+    <h1 data-i18n="heroTitle">Lokalne usluge na jeziku koji razumete</h1>
+    <p data-i18n="heroSubtitle">Pronađite pouzdane profesionalce u vašem okruženju</p>
 
     <select id="lang-switcher" style="margin-top: 1rem; padding: 6px; font-size: 1rem;">
-    <option value="en">🇬🇧 English</option>
-    <option value="sr" selected>🇷🇸 Srpski</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="sr" selected>🇷🇸 Srpski</option>
     </select>
   </div>
 </header>
 
 <section class="search-section">
   <form id="search-form">
-    <label for="category">Kategorija *</label>
+    <label for="category" data-i18n="labelCategory">Kategorija *</label>
     <select name="category" id="category">
-      <option value="">-- Izaberi kategoriju --</option>
+      <option value="" data-i18n="optionChooseCategory">-- Izaberi kategoriju --</option>
     </select>
 
-    <label for="drzava">Država *</label>
+    <label for="drzava" data-i18n="labelCountry">Država *</label>
     <select id="drzava" name="drzava">
-      <option value="">-- Izaberi državu --</option>
+      <option value="" data-i18n="optionChooseCountry">-- Izaberi državu --</option>
     </select>
 
-    <label for="grad">Grad *</label>
+    <label for="grad" data-i18n="labelCity">Grad *</label>
     <select id="grad" name="grad">
-      <option value="">-- Izaberi grad --</option>
+      <option value="" data-i18n="optionChooseCity">-- Izaberi grad --</option>
     </select>
 
     <div class="language-checkboxes">
-      <label><input type="checkbox" name="lang" value="serbian" checked />🇷🇸 Serbian</label>
-      <label><input type="checkbox" name="lang" value="croatian" />🇭🇷 Croatian</label>
-      <label><input type="checkbox" name="lang" value="bosnian" />🇧🇦 Bosnian</label>
-      <label><input type="checkbox" name="lang" value="english" />🇬🇧 English</label>
-      <label><input type="checkbox" name="lang" value="german" />🇩🇪 German</label>
-      <label><input type="checkbox" name="lang" value="russian" />🇷🇺 Russian</label>
-      <label><input type="checkbox" name="lang" value="ukrainian" />🇺🇦 Ukrainian</label>
+      <label><input type="checkbox" name="lang" value="serbian" checked />🇷🇸 <span data-i18n="langSerbian">Serbian</span></label>
+      <label><input type="checkbox" name="lang" value="croatian" />🇭🇷 <span data-i18n="langCroatian">Croatian</span></label>
+      <label><input type="checkbox" name="lang" value="bosnian" />🇧🇦 <span data-i18n="langBosnian">Bosnian</span></label>
+      <label><input type="checkbox" name="lang" value="english" />🇬🇧 <span data-i18n="langEnglish">English</span></label>
+      <label><input type="checkbox" name="lang" value="german" />🇩🇪 <span data-i18n="langGerman">German</span></label>
+      <label><input type="checkbox" name="lang" value="russian" />🇷🇺 <span data-i18n="langRussian">Russian</span></label>
+      <label><input type="checkbox" name="lang" value="ukrainian" />🇺🇦 <span data-i18n="langUkrainian">Ukrainian</span></label>
     </div>
-    <button type="submit">Search</button>
+
+    <button type="submit" data-i18n="btnSearch">Search</button>
   </form>
 </section>
 
 <section id="search-results" style="display: none;">
-  <h2>Rezultati pretrage</h2>
+  <h2 data-i18n="searchResultsTitle">Rezultati pretrage</h2>
   <div class="card-grid" id="search-firme">
     <!-- Rezultati pretrage idu ovde -->
   </div>
 </section>
 
-
 <section class="top-rated">
-  <h2>Top-rated services near you</h2>
+  <h2 data-i18n="topRatedTitle">Top-rated services near you</h2>
   <div id="top-firme" class="card-grid">
     <!-- Firms from firms.json will be injected here via JavaScript -->
   </div>
 </section>
 
 <section class="how-it-works">
-  <h2>How it works</h2>
+  <h2 data-i18n="howItWorksTitle">How it works</h2>
   <div class="steps">
-    <div class="step"><img src="assets/icons/find.png" alt="find icon" /><p>Find a service</p></div>
-    <div class="step"><img src="assets/icons/contact.png" alt="contact icon" /><p>Contact the provider</p></div>
-    <div class="step"><img src="assets/icons/review.png" alt="review icon" /><p>Leave a review</p></div>
+    <div class="step">
+      <img src="assets/icons/find.png" alt="find icon" />
+      <p data-i18n="stepFind">Find a service</p>
+    </div>
+    <div class="step">
+      <img src="assets/icons/contact.png" alt="contact icon" />
+      <p data-i18n="stepContact">Contact the provider</p>
+    </div>
+    <div class="step">
+      <img src="assets/icons/review.png" alt="review icon" />
+      <p data-i18n="stepReview">Leave a review</p>
+    </div>
   </div>
 </section>
 
 <section class="join">
-  <h2>Join our network of service providers</h2>
-  <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
+  <h2 data-i18n="joinTitle">Join our network of service providers</h2>
+  <a href="dodaj-firmu.html" class="btn-cta" data-i18n="btnAddCompany">Add your company</a>
 </section>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/form-init.js"></script> 
+<script src="assets/js/form-init.js"></script>
 <script src="assets/js/search-handler.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/lang.js"></script>

@@ -3,42 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profil firme - Global Native Web</title>
+  <title data-i18n="firmProfileTitle">Profil firme - Global Native Web</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
   <div class="breadcrumb">
-  <a href="index.html">← Nazad na pretragu</a>
+    <a href="index.html" data-i18n="backToSearch">← Nazad na pretragu</a>
   </div>
-
 
   <section class="firm-profile">
     <div class="profile-header">
       <img id="firma-logo" src="assets/icons/default.png" alt="Logo firme" />
       <div class="profile-info">
         <h1 id="firma-naziv">Naziv firme</h1>
-        <p id="firma-kategorija">Kategorija: Frizer</p>
-        <p id="firma-jezici">Govore: srpski, nemački</p>
-        <p id="firma-grad">Lokacija: Berlin, Nemačka</p>
+        <p id="firma-kategorija" data-i18n="labelCategory">Kategorija: Frizer</p>
+        <p id="firma-jezici" data-i18n="labelLanguages">Govore: srpski, nemački</p>
+        <p id="firma-grad" data-i18n="labelLocation">Lokacija: Berlin, Nemačka</p>
       </div>
     </div>
 
     <div class="profile-description">
-      <h2>Opis firme</h2>
-      <p id="firma-opis">Ovdje dolazi opis firme koji je unet prilikom registracije...</p>
+      <h2 data-i18n="firmDescription">Opis firme</h2>
+      <p id="firma-opis" data-i18n="firmPlaceholderDesc">Ovdje dolazi opis firme koji je unet prilikom registracije...</p>
     </div>
 
     <div class="profile-contact">
-      <h2>Kontakt</h2>
+      <h2 data-i18n="firmContact">Kontakt</h2>
       <p>Email: <a id="firma-email" href="#">firma@example.com</a></p>
-      <p>Telefon: <span id="firma-telefon">+49 123 456789</span></p>
-      <p>Adresa: <span id="firma-adresa">Alexanderplatz 1, Berlin</span></p>
-      <p>Web sajt: <a id="firma-websajt" href="#" target="_blank">Poseti</a></p>
+      <p data-i18n="firmPhone">Telefon: <span id="firma-telefon">+49 123 456789</span></p>
+      <p data-i18n="firmAddress">Adresa: <span id="firma-adresa">Alexanderplatz 1, Berlin</span></p>
+      <p data-i18n="firmWebsite">Web sajt: <a id="firma-websajt" href="#" target="_blank" data-i18n="visitWebsite">Poseti</a></p>
     </div>
   </section>
 
   <!-- Placeholder za JS koji popunjava stranicu na osnovu ID-a iz URL-a -->
   <!-- <script src="assets/js/profile.js"></script> -->
+  <script src="assets/js/lang.js"></script>
 </body>
 </html>
