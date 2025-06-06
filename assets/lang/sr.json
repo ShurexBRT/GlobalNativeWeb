@@ -9,4 +9,13 @@
   "leaveReview": "Ostavi recenziju",
   "joinTitle": "Pridruži se mreži pružalaca usluga",
   "addCompanyBtn": "Dodaj svoju firmu"
+  ,
+  "addFirmTitle": "Dodaj svoju firmu",
+  "addFirmSubtitle": "Popuni formu ispod i postani deo mreže lokalnih usluga koje govore tvoj jezik.",
+  "submitFirm": "Pošalji",
+  "submissionInfo": "Nakon provere, vaša firma biće vidljiva u rezultatima pretrage.",
+  "profileDescription": "Opis firme",
+  "profileContact": "Kontakt",
+  "visitWebsite": "Poseti"
+
 }

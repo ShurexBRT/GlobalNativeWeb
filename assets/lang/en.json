@@ -9,4 +9,13 @@
   "leaveReview": "Leave a review",
   "joinTitle": "Join our network of service providers",
   "addCompanyBtn": "Add your company"
+  ,
+  "addFirmTitle": "Add your business",
+  "addFirmSubtitle": "Fill out the form below to become part of our local service network.",
+  "submitFirm": "Submit",
+  "submissionInfo": "After verification, your company will appear in search results.",
+  "profileDescription": "Company description",
+  "profileContact": "Contact",
+  "visitWebsite": "Visit"
+
 }
