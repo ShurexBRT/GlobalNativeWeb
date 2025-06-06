@@ -187,4 +187,20 @@ textarea {
   margin-top: 1rem;
 }
 
+.btn-cta {
+  background-color: #ffffff;
+  color: #00487a;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-cta:hover {
+  background-color: #dcefff;
+}
+
+
 }
