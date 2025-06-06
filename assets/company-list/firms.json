@@ -1,0 +1,768 @@
+[
+  {
+    "id": "1",
+    "naziv": "Kallert AG",
+    "opis": "Sharable impactful neural-net",
+    "kategorija": "advokat",
+    "jezici": [
+      "engleski"
+    ],
+    "grad": "Ludwigsburg",
+    "drzava": "Nemačka",
+    "adresa": "Luzie-Textor-Gasse 5",
+    "email": "randolfbauer@hesse.net",
+    "telefon": "0046009074",
+    "websajt": "https://killer.org/",
+    "slika": "assets/img/advokat.jpg"
+  },
+  {
+    "id": "2",
+    "naziv": "Kusch",
+    "opis": "Advanced system-worthy website",
+    "kategorija": "advokat",
+    "jezici": [
+      "ukrajinski"
+    ],
+    "grad": "Rathenow",
+    "drzava": "Nemačka",
+    "adresa": "Gotthardring 5/5",
+    "email": "reichmannruediger@oderwald.de",
+    "telefon": "+49 (0) 2694 707894",
+    "websajt": "http://boucsein.com/",
+    "slika": "assets/img/advokat.jpg"
+  },
+  {
+    "id": "3",
+    "naziv": "Schaaf",
+    "opis": "Proactive impactful customer loyalty",
+    "kategorija": "advokat",
+    "jezici": [
+      "nemački",
+      "engleski",
+      "ruski"
+    ],
+    "grad": "Belzig",
+    "drzava": "Nemačka",
+    "adresa": "Zehra-Heinrich-Allee 08",
+    "email": "akade@wende.com",
+    "telefon": "02904 89550",
+    "websajt": "https://www.fischer.de/",
+    "slika": "assets/img/advokat.jpg"
+  },
+  {
+    "id": "4",
+    "naziv": "Gotthard GbR",
+    "opis": "Customer-focused composite migration",
+    "kategorija": "doktor",
+    "jezici": [
+      "engleski",
+      "hrvatski",
+      "srpski"
+    ],
+    "grad": "Ingolstadt",
+    "drzava": "Nemačka",
+    "adresa": "Marisa-Rosenow-Weg 9/0",
+    "email": "imke52@schuchhardt.org",
+    "telefon": "+49(0)0906 192113",
+    "websajt": "http://www.kitzmann.net/",
+    "slika": "assets/img/doktor.jpg"
+  },
+  {
+    "id": "5",
+    "naziv": "Dippel Kaul AG",
+    "opis": "Centralized fresh-thinking moratorium",
+    "kategorija": "doktor",
+    "jezici": [
+      "nemački",
+      "bosanski",
+      "srpski"
+    ],
+    "grad": "Stendal",
+    "drzava": "Nemačka",
+    "adresa": "Volkmar-Sölzer-Straße 59",
+    "email": "loretrub@ernst.de",
+    "telefon": "+49(0)3429 13500",
+    "websajt": "https://waehner.com/",
+    "slika": "assets/img/doktor.jpg"
+  },
+  {
+    "id": "6",
+    "naziv": "Nohlmans Müller AG",
+    "opis": "Object-based static database",
+    "kategorija": "doktor",
+    "jezici": [
+      "engleski",
+      "hrvatski"
+    ],
+    "grad": "Dresden",
+    "drzava": "Nemačka",
+    "adresa": "Hörleplatz 58",
+    "email": "lullrich@haase.de",
+    "telefon": "01031158591",
+    "websajt": "https://patberg.de/",
+    "slika": "assets/img/doktor.jpg"
+  },
+  {
+    "id": "7",
+    "naziv": "Jessel Pergande GmbH & Co. KGaA",
+    "opis": "Open-architected neutral portal",
+    "kategorija": "pedijatar",
+    "jezici": [
+      "ukrajinski",
+      "engleski",
+      "bosanski"
+    ],
+    "grad": "Celle",
+    "drzava": "Nemačka",
+    "adresa": "Mälzerstr. 4/5",
+    "email": "theresakuhl@baehr.de",
+    "telefon": "(02923) 78982",
+    "websajt": "https://www.klemt.de/",
+    "slika": "assets/img/pedijatar.jpg"
+  },
+  {
+    "id": "8",
+    "naziv": "Scholl",
+    "opis": "Balanced bifurcated utilization",
+    "kategorija": "pedijatar",
+    "jezici": [
+      "srpski"
+    ],
+    "grad": "Freudenstadt",
+    "drzava": "Nemačka",
+    "adresa": "Dimitri-Lehmann-Weg 905",
+    "email": "fritschfanny@ebert.com",
+    "telefon": "+49(0) 039961021",
+    "websajt": "http://budig.com/",
+    "slika": "assets/img/pedijatar.jpg"
+  },
+  {
+    "id": "9",
+    "naziv": "Weiß KGaA",
+    "opis": "Synergized 4thgeneration product",
+    "kategorija": "pedijatar",
+    "jezici": [
+      "ruski"
+    ],
+    "grad": "Eichstätt",
+    "drzava": "Nemačka",
+    "adresa": "Barthstraße 79",
+    "email": "zradisch@hauffer.de",
+    "telefon": "06362 498039",
+    "websajt": "http://www.holzapfel.net/",
+    "slika": "assets/img/pedijatar.jpg"
+  },
+  {
+    "id": "10",
+    "naziv": "Wirth",
+    "opis": "Reduced 5thgeneration attitude",
+    "kategorija": "stomatolog",
+    "jezici": [
+      "hrvatski",
+      "srpski",
+      "ukrajinski"
+    ],
+    "grad": "Beeskow",
+    "drzava": "Nemačka",
+    "adresa": "Heinz-Hornich-Ring 3",
+    "email": "tadeusz55@drubin.de",
+    "telefon": "01718 75719",
+    "websajt": "https://schuchhardt.de/",
+    "slika": "assets/img/stomatolog.jpg"
+  },
+  {
+    "id": "11",
+    "naziv": "Grein Groth",
+    "opis": "Visionary value-added methodology",
+    "kategorija": "stomatolog",
+    "jezici": [
+      "srpski",
+      "bosanski"
+    ],
+    "grad": "Ravensburg",
+    "drzava": "Nemačka",
+    "adresa": "Fauststraße 475",
+    "email": "staesche@nohlmans.com",
+    "telefon": "+49 (0) 6060 521237",
+    "websajt": "http://klemm.net/",
+    "slika": "assets/img/stomatolog.jpg"
+  },
+  {
+    "id": "12",
+    "naziv": "Heß",
+    "opis": "Open-architected 5thgeneration system engine",
+    "kategorija": "stomatolog",
+    "jezici": [
+      "srpski",
+      "engleski",
+      "nemački"
+    ],
+    "grad": "Brilon",
+    "drzava": "Nemačka",
+    "adresa": "Mosemanngasse 615",
+    "email": "sorgatzvanessa@boucsein.de",
+    "telefon": "09521 368595",
+    "websajt": "https://nohlmans.com/",
+    "slika": "assets/img/stomatolog.jpg"
+  },
+  {
+    "id": "13",
+    "naziv": "Zirme Drub AG & Co. OHG",
+    "opis": "Managed static challenge",
+    "kategorija": "veterinar",
+    "jezici": [
+      "ruski"
+    ],
+    "grad": "Kassel",
+    "drzava": "Nemačka",
+    "adresa": "Ortmannplatz 0",
+    "email": "mitschkemeinolf@kroker.com",
+    "telefon": "03420 78275",
+    "websajt": "http://www.bauer.de/",
+    "slika": "assets/img/veterinar.jpg"
+  },
+  {
+    "id": "14",
+    "naziv": "Junk",
+    "opis": "Sharable mobile standardization",
+    "kategorija": "veterinar",
+    "jezici": [
+      "ruski",
+      "hrvatski",
+      "nemački"
+    ],
+    "grad": "Pegnitz",
+    "drzava": "Nemačka",
+    "adresa": "Möchlichenplatz 6",
+    "email": "hans-adolfkensy@drub.de",
+    "telefon": "06038019708",
+    "websajt": "https://sorgatz.de/",
+    "slika": "assets/img/veterinar.jpg"
+  },
+  {
+    "id": "15",
+    "naziv": "Flantz Börner AG & Co. KG",
+    "opis": "Diverse bi-directional forecast",
+    "kategorija": "veterinar",
+    "jezici": [
+      "nemački",
+      "ukrajinski"
+    ],
+    "grad": "Lübz",
+    "drzava": "Nemačka",
+    "adresa": "Olena-Seifert-Weg 76",
+    "email": "wohlgemutdanica@adler.org",
+    "telefon": "(07507) 99568",
+    "websajt": "https://www.gutknecht.com/",
+    "slika": "assets/img/veterinar.jpg"
+  },
+  {
+    "id": "16",
+    "naziv": "Briemer",
+    "opis": "De-engineered 24hour model",
+    "kategorija": "knjigovođa",
+    "jezici": [
+      "ruski",
+      "ukrajinski",
+      "bosanski"
+    ],
+    "grad": "Northeim",
+    "drzava": "Nemačka",
+    "adresa": "Handeallee 397",
+    "email": "melissa68@kreusel.com",
+    "telefon": "(00586) 396781",
+    "websajt": "https://www.kusch.com/",
+    "slika": "assets/img/knjigovođa.jpg"
+  },
+  {
+    "id": "17",
+    "naziv": "Junck Stiftung & Co. KGaA",
+    "opis": "User-centric upward-trending task-force",
+    "kategorija": "knjigovođa",
+    "jezici": [
+      "engleski"
+    ],
+    "grad": "Kulmbach",
+    "drzava": "Nemačka",
+    "adresa": "Gretchen-Kambs-Allee 4",
+    "email": "hans-josef92@koch.org",
+    "telefon": "+49(0) 243374834",
+    "websajt": "https://www.biggen.de/",
+    "slika": "assets/img/knjigovođa.jpg"
+  },
+  {
+    "id": "18",
+    "naziv": "Schmidt Stiftung & Co. KG",
+    "opis": "Proactive grid-enabled archive",
+    "kategorija": "knjigovođa",
+    "jezici": [
+      "engleski"
+    ],
+    "grad": "Iserlohn",
+    "drzava": "Nemačka",
+    "adresa": "Clarissa-Krause-Allee 5/7",
+    "email": "wolframbaehr@barth.org",
+    "telefon": "(04339) 145187",
+    "websajt": "https://www.beckmann.net/",
+    "slika": "assets/img/knjigovođa.jpg"
+  },
+  {
+    "id": "19",
+    "naziv": "Rosemann AG & Co. KG",
+    "opis": "Down-sized neutral hardware",
+    "kategorija": "frizer",
+    "jezici": [
+      "nemački",
+      "bosanski"
+    ],
+    "grad": "Chemnitz",
+    "drzava": "Nemačka",
+    "adresa": "Hedi-Losekann-Weg 34",
+    "email": "catrin31@junk.net",
+    "telefon": "+49(0) 663745898",
+    "websajt": "https://hettner.de/",
+    "slika": "assets/img/frizer.jpg"
+  },
+  {
+    "id": "20",
+    "naziv": "Rosemann AG",
+    "opis": "Digitized contextually-based flexibility",
+    "kategorija": "frizer",
+    "jezici": [
+      "nemački",
+      "ruski",
+      "bosanski"
+    ],
+    "grad": "Aue",
+    "drzava": "Nemačka",
+    "adresa": "Karzstr. 3/5",
+    "email": "hoerleeleonore@caspar.de",
+    "telefon": "0706786612",
+    "websajt": "https://heinrich.net/",
+    "slika": "assets/img/frizer.jpg"
+  },
+  {
+    "id": "21",
+    "naziv": "Ebert Gnatz AG",
+    "opis": "Total analyzing capability",
+    "kategorija": "frizer",
+    "jezici": [
+      "srpski",
+      "nemački",
+      "hrvatski"
+    ],
+    "grad": "Greifswald",
+    "drzava": "Nemačka",
+    "adresa": "Mosemanngasse 7/9",
+    "email": "nicobuchholz@pruschke.com",
+    "telefon": "(09934) 204705",
+    "websajt": "http://pechel.de/",
+    "slika": "assets/img/frizer.jpg"
+  },
+  {
+    "id": "22",
+    "naziv": "Hering Döhn AG & Co. OHG",
+    "opis": "Versatile radical moderator",
+    "kategorija": "restoran",
+    "jezici": [
+      "ukrajinski",
+      "ruski"
+    ],
+    "grad": "Eichstätt",
+    "drzava": "Nemačka",
+    "adresa": "Daniele-Anders-Weg 749",
+    "email": "jann08@gotthard.org",
+    "telefon": "+49(0)3803 33992",
+    "websajt": "http://www.huhn.com/",
+    "slika": "assets/img/restoran.jpg"
+  },
+  {
+    "id": "23",
+    "naziv": "Scheuermann",
+    "opis": "Focused executive collaboration",
+    "kategorija": "restoran",
+    "jezici": [
+      "bosanski"
+    ],
+    "grad": "Lübz",
+    "drzava": "Nemačka",
+    "adresa": "Wolf-Dieter-Hartung-Gasse 449",
+    "email": "rosita84@dobes.com",
+    "telefon": "+49 (0) 4526 240369",
+    "websajt": "http://fischer.de/",
+    "slika": "assets/img/restoran.jpg"
+  },
+  {
+    "id": "24",
+    "naziv": "Nerger",
+    "opis": "Visionary non-volatile encryption",
+    "kategorija": "restoran",
+    "jezici": [
+      "nemački",
+      "srpski"
+    ],
+    "grad": "Gelnhausen",
+    "drzava": "Nemačka",
+    "adresa": "Arnim-Henck-Weg 464",
+    "email": "rloos@loos.de",
+    "telefon": "+49 (0) 3457 312367",
+    "websajt": "https://koehler.net/",
+    "slika": "assets/img/restoran.jpg"
+  },
+  {
+    "id": "25",
+    "naziv": "Pergande",
+    "opis": "Operative full-range toolset",
+    "kategorija": "kafić",
+    "jezici": [
+      "srpski",
+      "engleski"
+    ],
+    "grad": "Bischofswerda",
+    "drzava": "Nemačka",
+    "adresa": "Hermannstraße 5",
+    "email": "yhornich@schaaf.com",
+    "telefon": "05235086906",
+    "websajt": "https://zahn.net/",
+    "slika": "assets/img/kafić.jpg"
+  },
+  {
+    "id": "26",
+    "naziv": "Eberhardt Bärer GbR",
+    "opis": "Up-sized static frame",
+    "kategorija": "kafić",
+    "jezici": [
+      "ukrajinski",
+      "ruski",
+      "engleski"
+    ],
+    "grad": "Rudolstadt",
+    "drzava": "Nemačka",
+    "adresa": "Wulf-Schlosser-Ring 3",
+    "email": "pasqualejaekel@gorlitz.com",
+    "telefon": "0536116673",
+    "websajt": "http://www.renner.com/",
+    "slika": "assets/img/kafić.jpg"
+  },
+  {
+    "id": "27",
+    "naziv": "Wieloch Thies KG",
+    "opis": "Cloned asynchronous database",
+    "kategorija": "kafić",
+    "jezici": [
+      "ukrajinski",
+      "nemački",
+      "hrvatski"
+    ],
+    "grad": "Deggendorf",
+    "drzava": "Nemačka",
+    "adresa": "Etzoldstraße 741",
+    "email": "katjathies@rohleder.net",
+    "telefon": "+49 (0) 1251 623487",
+    "websajt": "https://www.spiess.net/",
+    "slika": "assets/img/kafić.jpg"
+  },
+  {
+    "id": "28",
+    "naziv": "Mohaupt Hahn AG & Co. KGaA",
+    "opis": "Cross-group reciprocal product",
+    "kategorija": "moler",
+    "jezici": [
+      "bosanski"
+    ],
+    "grad": "Ilmenau",
+    "drzava": "Nemačka",
+    "adresa": "Bela-Butte-Platz 74",
+    "email": "huebelmonique@pechel.de",
+    "telefon": "+49(0)8417 36583",
+    "websajt": "http://www.ring.de/",
+    "slika": "assets/img/moler.jpg"
+  },
+  {
+    "id": "29",
+    "naziv": "Gorlitz",
+    "opis": "Open-source modular collaboration",
+    "kategorija": "moler",
+    "jezici": [
+      "ruski",
+      "bosanski",
+      "engleski"
+    ],
+    "grad": "Freital",
+    "drzava": "Nemačka",
+    "adresa": "Ernststr. 4/5",
+    "email": "claudius48@suessebier.com",
+    "telefon": "0311380227",
+    "websajt": "http://plath.com/",
+    "slika": "assets/img/moler.jpg"
+  },
+  {
+    "id": "30",
+    "naziv": "Neuschäfer Dörschner AG & Co. OHG",
+    "opis": "Self-enabling radical matrix",
+    "kategorija": "moler",
+    "jezici": [
+      "ruski"
+    ],
+    "grad": "Recklinghausen",
+    "drzava": "Nemačka",
+    "adresa": "Cordula-Bähr-Allee 9/1",
+    "email": "seifertklaus-michael@textor.de",
+    "telefon": "+49(0)3963255099",
+    "websajt": "http://www.hornig.de/",
+    "slika": "assets/img/moler.jpg"
+  },
+  {
+    "id": "31",
+    "naziv": "Bauer GmbH",
+    "opis": "Fundamental background throughput",
+    "kategorija": "električar",
+    "jezici": [
+      "srpski",
+      "nemački",
+      "hrvatski"
+    ],
+    "grad": "Heinsberg",
+    "drzava": "Nemačka",
+    "adresa": "Bohlanderweg 0/3",
+    "email": "stefanie02@kabus.de",
+    "telefon": "+49 (0) 4406 355395",
+    "websajt": "http://bauer.net/",
+    "slika": "assets/img/električar.jpg"
+  },
+  {
+    "id": "32",
+    "naziv": "Weimer",
+    "opis": "Innovative local Graphic Interface",
+    "kategorija": "električar",
+    "jezici": [
+      "engleski",
+      "hrvatski"
+    ],
+    "grad": "Großenhain",
+    "drzava": "Nemačka",
+    "adresa": "Lübsplatz 820",
+    "email": "kreuselottfried@riehl.de",
+    "telefon": "00694 71609",
+    "websajt": "https://www.van.org/",
+    "slika": "assets/img/električar.jpg"
+  },
+  {
+    "id": "33",
+    "naziv": "Eigenwillig Beckmann AG & Co. OHG",
+    "opis": "Assimilated client-driven forecast",
+    "kategorija": "električar",
+    "jezici": [
+      "ruski",
+      "bosanski",
+      "nemački"
+    ],
+    "grad": "Kleve",
+    "drzava": "Nemačka",
+    "adresa": "Volkhard-Stolze-Platz 32",
+    "email": "insa57@kitzmann.de",
+    "telefon": "+49(0) 409380599",
+    "websajt": "http://www.heydrich.com/",
+    "slika": "assets/img/električar.jpg"
+  },
+  {
+    "id": "34",
+    "naziv": "Matthäi Mitschke GmbH & Co. OHG",
+    "opis": "Grass-roots needs-based process improvement",
+    "kategorija": "vodoinstalater",
+    "jezici": [
+      "bosanski"
+    ],
+    "grad": "Ochsenfurt",
+    "drzava": "Nemačka",
+    "adresa": "Winklerstr. 2/0",
+    "email": "karl-dieterditschlerin@hoefig.de",
+    "telefon": "05748 81093",
+    "websajt": "http://www.stey.de/",
+    "slika": "assets/img/vodoinstalater.jpg"
+  },
+  {
+    "id": "35",
+    "naziv": "Seidel Stiftung & Co. KG",
+    "opis": "Synergistic 5thgeneration adapter",
+    "kategorija": "vodoinstalater",
+    "jezici": [
+      "ukrajinski",
+      "engleski"
+    ],
+    "grad": "Göppingen",
+    "drzava": "Nemačka",
+    "adresa": "Sauerallee 22",
+    "email": "fschulz@meister.de",
+    "telefon": "0181885743",
+    "websajt": "http://www.jessel.net/",
+    "slika": "assets/img/vodoinstalater.jpg"
+  },
+  {
+    "id": "36",
+    "naziv": "Lachmann GmbH",
+    "opis": "Synchronized uniform encoding",
+    "kategorija": "vodoinstalater",
+    "jezici": [
+      "ruski",
+      "engleski",
+      "bosanski"
+    ],
+    "grad": "Saarbrücken",
+    "drzava": "Nemačka",
+    "adresa": "Henckallee 73",
+    "email": "gerlindbachmann@suessebier.de",
+    "telefon": "+49(0)3013 204251",
+    "websajt": "http://binner.com/",
+    "slika": "assets/img/vodoinstalater.jpg"
+  },
+  {
+    "id": "37",
+    "naziv": "Johann",
+    "opis": "Customizable human-resource info-mediaries",
+    "kategorija": "auto-servis",
+    "jezici": [
+      "nemački"
+    ],
+    "grad": "Rothenburg ob der Tauber",
+    "drzava": "Nemačka",
+    "adresa": "Nada-Krein-Ring 3",
+    "email": "birnbaumnils@conradi.com",
+    "telefon": "+49(0)0780 22601",
+    "websajt": "https://eberhardt.com/",
+    "slika": "assets/img/auto-servis.jpg"
+  },
+  {
+    "id": "38",
+    "naziv": "Stroh Bärer AG & Co. KGaA",
+    "opis": "Assimilated stable complexity",
+    "kategorija": "auto-servis",
+    "jezici": [
+      "engleski",
+      "ruski"
+    ],
+    "grad": "Malchin",
+    "drzava": "Nemačka",
+    "adresa": "Hermannring 86",
+    "email": "juttahendriks@walter.com",
+    "telefon": "(05720) 769031",
+    "websajt": "http://seifert.de/",
+    "slika": "assets/img/auto-servis.jpg"
+  },
+  {
+    "id": "39",
+    "naziv": "Fischer Wiek AG",
+    "opis": "Public-key real-time knowledgebase",
+    "kategorija": "auto-servis",
+    "jezici": [
+      "nemački"
+    ],
+    "grad": "Amberg",
+    "drzava": "Nemačka",
+    "adresa": "Neureutherstr. 72",
+    "email": "felicitaswarmer@henck.de",
+    "telefon": "09267 30371",
+    "websajt": "https://kuhl.de/",
+    "slika": "assets/img/auto-servis.jpg"
+  },
+  {
+    "id": "40",
+    "naziv": "Textor Pechel KG",
+    "opis": "Decentralized impactful standardization",
+    "kategorija": "prevodilac",
+    "jezici": [
+      "hrvatski",
+      "ruski"
+    ],
+    "grad": "Augsburg",
+    "drzava": "Nemačka",
+    "adresa": "Hiltrud-Hornich-Gasse 50",
+    "email": "drubreinhilde@hartung.com",
+    "telefon": "05133180479",
+    "websajt": "http://www.bolzmann.de/",
+    "slika": "assets/img/prevodilac.jpg"
+  },
+  {
+    "id": "41",
+    "naziv": "Gierschner KGaA",
+    "opis": "Operative secondary implementation",
+    "kategorija": "prevodilac",
+    "jezici": [
+      "ukrajinski"
+    ],
+    "grad": "Rehau",
+    "drzava": "Nemačka",
+    "adresa": "Sarina-Heintze-Gasse 9",
+    "email": "yschinke@weitzel.com",
+    "telefon": "+49(0) 808229715",
+    "websajt": "http://www.karz.net/",
+    "slika": "assets/img/prevodilac.jpg"
+  },
+  {
+    "id": "42",
+    "naziv": "Zirme Thies KG",
+    "opis": "Persistent bandwidth-monitored solution",
+    "kategorija": "prevodilac",
+    "jezici": [
+      "ukrajinski",
+      "engleski"
+    ],
+    "grad": "Flöha",
+    "drzava": "Nemačka",
+    "adresa": "Hornigstr. 77",
+    "email": "ralph80@hartung.com",
+    "telefon": "+49(0) 259945669",
+    "websajt": "https://jacobi.de/",
+    "slika": "assets/img/prevodilac.jpg"
+  },
+  {
+    "id": "43",
+    "naziv": "Hecker Birnbaum Stiftung & Co. KGaA",
+    "opis": "Synchronized radical hub",
+    "kategorija": "psiholog",
+    "jezici": [
+      "ukrajinski",
+      "engleski"
+    ],
+    "grad": "Kassel",
+    "drzava": "Nemačka",
+    "adresa": "Robin-Lübs-Weg 1",
+    "email": "suzanne62@heinz.de",
+    "telefon": "07143 06266",
+    "websajt": "https://www.geisler.de/",
+    "slika": "assets/img/psiholog.jpg"
+  },
+  {
+    "id": "44",
+    "naziv": "Hande Eberth GmbH",
+    "opis": "Switchable executive implementation",
+    "kategorija": "psiholog",
+    "jezici": [
+      "srpski",
+      "bosanski"
+    ],
+    "grad": "Stollberg",
+    "drzava": "Nemačka",
+    "adresa": "Britt-Huhn-Platz 8/6",
+    "email": "marianna55@baum.com",
+    "telefon": "(03264) 50238",
+    "websajt": "https://www.klemt.com/",
+    "slika": "assets/img/psiholog.jpg"
+  },
+  {
+    "id": "45",
+    "naziv": "Bloch GmbH & Co. OHG",
+    "opis": "Realigned transitional model",
+    "kategorija": "psiholog",
+    "jezici": [
+      "ukrajinski"
+    ],
+    "grad": "Hofgeismar",
+    "drzava": "Nemačka",
+    "adresa": "Bauerallee 559",
+    "email": "stephensegebahn@scholtz.de",
+    "telefon": "+49(0)8338 296423",
+    "websajt": "http://www.warmer.org/",
+    "slika": "assets/img/psiholog.jpg"
+  }
+]

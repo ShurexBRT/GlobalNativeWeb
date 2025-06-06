@@ -1,83 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Native Web</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Native Web</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-overlay">
-            <h1>Local services in the language you understand</h1>
-            <p>Search for providers who speak your language.</p>
-            <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>Local services in the language you understand</h1>
+      <p>Search for providers who speak your language.</p>
+      <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
+    </div>
+  </header>
 
-    <section class="search-section">
-        <form id="search-form">
-            <select name="category">
-                <option value="">Select Category</option>
-                <option value="lawyer">Lawyer</option>
-                <option value="frizer">Hairdresser</option>
-                <option value="painter">Painter</option>
-            </select>
-            <div class="language-checkboxes">
-                <label><input type="checkbox" name="lang" value="serbian" checked> Serbian</label>
-                <label><input type="checkbox" name="lang" value="croatian"> Croatian</label>
-                <label><input type="checkbox" name="lang" value="bosnian"> Bosnian</label>
-                <label><input type="checkbox" name="lang" value="english"> English</label>
-                <label><input type="checkbox" name="lang" value="german"> German</label>
-                <label><input type="checkbox" name="lang" value="russian"> Russian</label>
-                <label><input type="checkbox" name="lang" value="ukrainian"> Ukrainian</label>
-            </div>
-            <button type="submit">Search</button>
-        </form>
-    </section>
+  <section class="search-section">
+    <form id="search-form">
+      <select name="category">
+        <option value="">Select Category</option>
+        <option value="lawyer">Lawyer</option>
+        <option value="frizer">Hairdresser</option>
+        <option value="painter">Painter</option>
+      </select>
+      <div class="language-checkboxes">
+        <label><input type="checkbox" name="lang" value="serbian" checked /> Serbian</label>
+        <label><input type="checkbox" name="lang" value="croatian" /> Croatian</label>
+        <label><input type="checkbox" name="lang" value="bosnian" /> Bosnian</label>
+        <label><input type="checkbox" name="lang" value="english" /> English</label>
+        <label><input type="checkbox" name="lang" value="german" /> German</label>
+        <label><input type="checkbox" name="lang" value="russian" /> Russian</label>
+        <label><input type="checkbox" name="lang" value="ukrainian" /> Ukrainian</label>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+  </section>
 
-    <section class="top-rated">
-        <h2>Top-rated services near you</h2>
-        <div class="card-grid">
-            <div class="card">
-                <img src="assets/icons/lawyer.png" alt="lawyer icon" class="icon">
-                <h3>Anwaltskanzlei Muller</h3>
-                <p>Berlin - 🇷🇸 Serbian, 🇩🇪 German</p>
-                <p>⭐ 4.9</p>
-            </div>
-            <div class="card">
-                <img src="assets/icons/frizer.png" alt="frizer icon" class="icon">
-                <h3>Salon Frisor</h3>
-                <p>Berlin - 🇭🇷 Croatian, 🇩🇪 German</p>
-                <p>⭐ 4.8</p>
-            </div>
-            <div class="card">
-                <img src="assets/icons/painter.png" alt="painter icon" class="icon">
-                <h3>Moler Petrović</h3>
-                <p>Hamburg - 🇷🇸 Serbian, 🇷🇺 Russian</p>
-                <p>⭐ 4.8</p>
-            </div>
-            <div class="card">
-                <img src="assets/icons/plumber.png" alt="plumber icon" class="icon">
-                <h3>Schneider Ruslan</h3>
-                <p>Berlin - 🇷🇺 Russian, 🇺🇦 Ukrainian</p>
-                <p>⭐ 4.7</p>
-            </div>
-        </div>
-    </section>
+  <section class="top-rated">
+    <h2>Top-rated services near you</h2>
+    <div id="top-firme" class="card-grid">
+      <!-- Firms from firms.json will be injected here via JavaScript -->
+    </div>
+  </section>
 
-    <section class="how-it-works">
-        <h2>How it works</h2>
-        <div class="steps">
-            <div class="step"><img src="assets/icons/find.png" alt="find icon"><p>Find a service</p></div>
-            <div class="step"><img src="assets/icons/contact.png" alt="contact icon"><p>Contact the provider</p></div>
-            <div class="step"><img src="assets/icons/review.png" alt="review icon"><p>Leave a review</p></div>
-        </div>
-    </section>
+  <section class="how-it-works">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><img src="assets/icons/find.png" alt="find icon" /><p>Find a service</p></div>
+      <div class="step"><img src="assets/icons/contact.png" alt="contact icon" /><p>Contact the provider</p></div>
+      <div class="step"><img src="assets/icons/review.png" alt="review icon" /><p>Leave a review</p></div>
+    </div>
+  </section>
 
-    <section class="join">
-        <h2>Join our network of service providers</h2>
-        <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
-    </section>
+  <section class="join">
+    <h2>Join our network of service providers</h2>
+    <a href="dodaj-firmu.html" class="btn-cta">Add your company</a>
+  </section>
+
+  <script src="assets/js/main.js"></script>
+
 </body>
 </html>
