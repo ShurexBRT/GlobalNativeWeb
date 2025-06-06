@@ -166,16 +166,7 @@ textarea {
   margin-top: 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .profile-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .steps {
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   .join {
   text-align: center;
@@ -201,6 +192,46 @@ textarea {
 .btn-cta:hover {
   background-color: #dcefff;
 }
+/* RESPONSIVE */
+/* MOBILE STILOVI */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
 
+  .hero-overlay p {
+    font-size: 1rem;
+  }
 
+  .search-section form,
+  .top-rated .card,
+  .steps,
+  .join {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .language-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+    max-width: 100%;
+  }
 }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
