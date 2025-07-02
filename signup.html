@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up • Maylo</title>
+  <link rel="stylesheet" href="assets/css/signup.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@400;600&display=swap" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script defer src="assets/js/lang.js"></script>
+  <script defer src="assets/js/signup.js"></script>
+</head>
+<body>
+  <div class="signup-container">
+    <img src="assets/maylo/signup.png" alt="Maylo robot" class="maylo-img" />
+    <h1 data-i18n="create_account">Create an account</h1>
+
+    <div class="social-signup">
+      <button class="social" id="google-signup"><i class="material-icons">login</i> Sign up with Google</button>
+      <button class="social"><i class="material-icons">facebook</i> Sign up with Facebook</button>
+      <button class="social"><i class="material-icons">apple</i> Sign up with Apple</button>
+    </div>
+
+    <form class="signup-form" id="signup-form">
+      <input type="text" id="fullName" placeholder="Full name" data-i18n-placeholder="full_name" required />
+      <input type="email" id="email" placeholder="Email address" data-i18n-placeholder="email" required />
+      <input type="password" id="password" placeholder="Password" data-i18n-placeholder="password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm password" data-i18n-placeholder="confirm_password" required />
+      <button type="submit" id="signupBtn" class="btn primary" data-i18n="sign_up">Sign up</button>
+    </form>
+
+    <p class="switch-login">
+      <span data-i18n="already_have_account">Already have an account?</span>
+      <a href="login.html" data-i18n="log_in">Log in</a>
+    </p>
+
+    <p class="terms">
+      <span data-i18n="terms_notice">By signing up, you agree to our</span>
+      <a href="terms.html" target="_blank">Terms</a> & <a href="privacy.html" target="_blank">Privacy Policy</a>.
+    </p>
+  </div>
+</body>
+</html>

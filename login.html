@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="login_title">Login | Maylo</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <img src="./assets/maylo/login.png" alt="Maylo holding tablet" class="maylo-illustration" />
+    <!-- <h1 class="title">Maylo</h1> -->
+
+    <form id="loginForm" class="login-form">
+      <div class="input-group">
+        <span class="material-icons">mail</span>
+        <input type="email" name="email" placeholder="Email address" data-i18n-placeholder="email_placeholder" required />
+      </div>
+
+      <div class="input-group">
+        <span class="material-icons">lock</span>
+        <input type="password" name="password" placeholder="Password" data-i18n-placeholder="password_placeholder" required />
+        <a href="#" class="forgot-password" data-i18n="forgot_password">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn primary" data-i18n="login_button">Log in</button>
+      <a href="signup.html" class="btn secondary" data-i18n="signup_button">Sign up</a>
+
+      <div id="errorMessage" class="error-message"></div>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/lang.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+  <script src="./assets/js/login.js"></script>
+</body>
+</html>
