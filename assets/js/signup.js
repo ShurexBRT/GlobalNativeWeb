@@ -8,9 +8,9 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-const signupForm = document.getElementById('signupForm');
+const signupForm = document.getElementById('signup-form');
 const errorMessage = document.getElementById('errorMessage');
-const googleBtn = document.getElementById('googleSignUp');
+const googleBtn = document.getElementById('google-signup');
 
 // Google sign-up
 if (googleBtn) {
@@ -69,4 +69,7 @@ signupForm.addEventListener('submit', async (e) => {
         break;
     }
   }
+
+  signupForm.reset();
+
 });
