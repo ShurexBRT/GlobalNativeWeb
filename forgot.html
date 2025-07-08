@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot Password • Maylo</title>
+  <link rel="stylesheet" href="assets/css/forgot.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <div class="forgot-container">
+    <img src="assets/maylo/maylo-forgot-password.png" alt="Maylo forgot password" class="maylo-img" />
+
+    <h1 data-i18n="forgot_title">Forgot your password?</h1>
+    <p data-i18n="forgot_subtitle">
+      Enter your email address and we’ll send you a link to reset your password.
+    </p>
+
+    <form id="forgot-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <button type="submit" class="btn primary" data-i18n="send_link">Send reset link</button>
+    </form>
+
+    <p class="back">
+      <a href="login.html"><span class="material-icons">arrow_back</span> <span data-i18n="back_login">Back to login</span></a>
+    </p>
+
+    <p id="message" class="status-message"></p>
+  </div>
+
+  <script type="module" src="assets/js/forgot.js"></script>
+  <script defer src="assets/js/lang.js"></script>
+</body>
+</html>
