@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = "settings.html"; // kasnije
           break;
         case 4:
-          // Firebase logout, redirect na welcome
-          logoutUser();
+          window.location.href = "welcome.html"; // kasnije
           break;
+          // logoutUser();
       }
     });
   });
