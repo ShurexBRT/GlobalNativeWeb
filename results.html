@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rezultati pretrage - Global Native Web</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Results • Maylo</title>
+  <link rel="stylesheet" href="assets/css/results.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/maylo/maylo-logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
-  <section class="results-header">
-    <h1>Rezultati pretrage</h1>
-    <p id="filter-info">Prikazujemo firme za: <strong>Frizer</strong> u <strong>Berlinu</strong> koje govore: <strong>srpski, nemački</strong></p>
-    <p id="result-count">Pronađeno: 0 firmi</p>
-  </section>
 
-  <section class="results-list">
-    <div id="firma-container" class="card-grid">
-      <!-- Kartice firmi se dinamički ubacuju ovde putem JavaScript-a -->
-    </div>
-    <p id="no-results" style="display: none;">Nema rezultata koji odgovaraju pretrazi.</p>
-  </section>
+  <header class="header">
+    <img src="assets/maylo/maylo-logo.svg" alt="Maylo logo" class="logo" />
+    <span class="brand">Maylo</span>
+  </header>
 
-  <!-- Placeholder za budući JS -->
-  <!-- <script src="assets/js/results.js"></script> -->
+  <main class="main">
+    <section class="info" id="search-info">
+      <!-- Popunjava se JS-om -->
+    </section>
+
+    <section class="results" id="search-results">
+      <!-- Popunjava se JS-om -->
+    </section>
+  </main>
+
+  <script defer src="assets/js/search-handler.js"></script>
+  <script defer src="assets/js/lang.js"></script>
 </body>
 </html>

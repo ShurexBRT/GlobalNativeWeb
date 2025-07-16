@@ -1,101 +1,63 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="pageTitle">Global Native Web</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Maylo – Find services in your language</title>
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/maylo/maylo-logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
 
-  <div class="lang-selector">
-  <select id="lang-switcher">
-    <option value="sr" selected>🇷🇸 SR</option>
-    <option value="en">🇬🇧 EN</option>
-  </select>
-</div>
+  <header class="header">
+    <img src="assets/maylo/maylo-logo.svg" alt="Maylo logo" class="logo" />
+    <span class="brand">Maylo</span>
+  </header>
 
+  <section class="hero">
+    <h1>Local services in the<br /><span class="highlight">language you understand</span></h1>
+    <p class="subtext">Find trusted professionals near you</p>
 
-<header class="hero">
-  <div class="hero-overlay">
-    <h1 data-i18n="heroTitle">Lokalne usluge na jeziku koji razumete</h1>
-    <p data-i18n="heroSubtitle">Pronađite pouzdane profesionalce u vašem okruženju</p>
-  </div>
-</header>
+    <form id="searchForm" class="search-form">
+      <input type="text" id="serviceInput" placeholder="Type of service" />
+      <input type="text" id="locationInput" placeholder="Location" />
 
-<section class="search-section">
-  <form id="search-form">
-    <label for="category" data-i18n="labelCategory">Kategorija *</label>
-    <select name="category" id="category">
-      <option value="" data-i18n="optionChooseCategory">-- Izaberi kategoriju --</option>
-    </select>
+      <div class="languages">
+        <label><input type="checkbox" value="en" /> English</label>
+        <label><input type="checkbox" value="de" /> German</label>
+        <label><input type="checkbox" value="sr" /> Serbian</label>
+        <label><input type="checkbox" value="hr" /> Croatian</label>
+        <label><input type="checkbox" value="bs" /> Bosnian</label>
+        <label><input type="checkbox" value="mk" /> Macedonian</label>
+        <label><input type="checkbox" value="sl" /> Slovenian</label>
+        <label><input type="checkbox" value="ru" /> Russian</label>
+        <label><input type="checkbox" value="uk" /> Ukrainian</label>
+      </div>
 
-    <label for="drzava" data-i18n="labelCountry">Država *</label>
-    <select id="drzava" name="drzava">
-      <option value="" data-i18n="optionChooseCountry">-- Izaberi državu --</option>
-    </select>
+      <button type="submit" class="btn-primary">
+        <span class="material-icons">search</span> Search
+      </button>
+    </form>
+  </section>
 
-    <label for="grad" data-i18n="labelCity">Grad *</label>
-    <select id="grad" name="grad">
-      <option value="" data-i18n="optionChooseCity">-- Izaberi grad --</option>
-    </select>
-
-    <div class="language-checkboxes">
-      <label><input type="checkbox" name="lang" value="serbian" checked />🇷🇸 <span data-i18n="langSerbian">Serbian</span></label>
-      <label><input type="checkbox" name="lang" value="croatian" />🇭🇷 <span data-i18n="langCroatian">Croatian</span></label>
-      <label><input type="checkbox" name="lang" value="bosnian" />🇧🇦 <span data-i18n="langBosnian">Bosnian</span></label>
-      <label><input type="checkbox" name="lang" value="english" />🇬🇧 <span data-i18n="langEnglish">English</span></label>
-      <label><input type="checkbox" name="lang" value="german" />🇩🇪 <span data-i18n="langGerman">German</span></label>
-      <label><input type="checkbox" name="lang" value="russian" />🇷🇺 <span data-i18n="langRussian">Russian</span></label>
-      <label><input type="checkbox" name="lang" value="ukrainian" />🇺🇦 <span data-i18n="langUkrainian">Ukrainian</span></label>
+  <section class="popular">
+    <h2>Popular branches</h2>
+    <div class="branches" id="branchList">
+      <!-- Auto-generated -->
     </div>
+  </section>
 
-    <button type="submit" data-i18n="btnSearch">Search</button>
-  </form>
-</section>
-
-<section id="search-results" style="display: none;">
-  <h2 data-i18n="searchResultsTitle">Rezultati pretrage</h2>
-  <div class="card-grid" id="search-firme">
-    <!-- Rezultati pretrage idu ovde -->
-  </div>
-</section>
-
-<section class="top-rated">
-  <h2 data-i18n="topRatedTitle">Top-rated services near you</h2>
-  <div id="top-firme" class="card-grid">
-    <!-- Firms from firms.json will be injected here via JavaScript -->
-  </div>
-</section>
-
-<section class="how-it-works">
-  <h2 data-i18n="howItWorksTitle">How it works</h2>
-  <div class="steps">
-    <div class="step">
-      <img src="assets/icons/find.png" alt="find icon" />
-      <p data-i18n="stepFind">Find a service</p>
+  <section class="results">
+    <h2>Top-rated services near you</h2>
+    <div class="cards" id="resultsList">
+      <!-- Auto-generated -->
     </div>
-    <div class="step">
-      <img src="assets/icons/contact.png" alt="contact icon" />
-      <p data-i18n="stepContact">Contact the provider</p>
-    </div>
-    <div class="step">
-      <img src="assets/icons/review.png" alt="review icon" />
-      <p data-i18n="stepReview">Leave a review</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="join">
-  <h2 data-i18n="joinTitle">Join our network of service providers</h2>
-  <a href="dodaj-firmu.html" class="btn-cta" data-i18n="btnAddCompany">Add your company</a>
-</section>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/form-init.js"></script>
-<script src="assets/js/search-handler.js"></script>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/lang.js"></script>
-
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/search-handler.js"></script>
+  <script defer src="assets/js/lang.js"></script>
 </body>
 </html>
