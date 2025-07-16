@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maylo – Find services in your language</title>
   <link rel="stylesheet" href="assets/css/index.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/maylo/maylo-logo.svg" />
+  <link rel="icon"  href="assets/maylo/maylo-logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
@@ -19,6 +19,16 @@
   <section class="hero">
     <h1>Local services in the<br /><span class="highlight">language you understand</span></h1>
     <p class="subtext">Find trusted professionals near you</p>
+
+    <div id="menuDrawer" class="drawer">
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
+  </div>
 
     <form id="searchForm" class="search-form">
       <input type="text" id="serviceInput" placeholder="Type of service" />
@@ -59,5 +69,6 @@
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/search-handler.js"></script>
   <script defer src="assets/js/lang.js"></script>
+  <script defer src="assets/js/menu.js"></script>
 </body>
 </html>

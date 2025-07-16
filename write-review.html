@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave a Review</title>
+  <link rel="stylesheet" href="assets/css/review.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/img/maylo-review-write.png" alt="Maylo writing" class="maylo-img" />
+
+    <h1 id="companyName">Leave a review for [Company Name]</h1>
+
+    <form id="reviewForm">
+      <div class="stars" id="starsContainer">
+        <!-- JS will render stars here -->
+      </div>
+
+      <textarea 
+        id="reviewText" 
+        maxlength="200" 
+        placeholder="Write your experience..." 
+        required>
+      </textarea>
+
+      <input type="date" id="visitDate" required />
+
+      <button type="submit" class="submit-btn">Submit review</button>
+      <p class="note">Your review will be verified before publishing.</p>
+    </form>
+  </div>
+
+  <script src="assets/js/review.js" type="module"></script>
+</body>
+</html>
