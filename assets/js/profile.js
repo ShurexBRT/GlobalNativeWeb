@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       reviewSection.innerHTML += `
-        <a href="#" class="write-review">Write a review</a>
+        <a href="write-review.html" class="write-review">Write a review</a>
       `;
     }
 
