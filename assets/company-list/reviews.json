@@ -1,0 +1,44 @@
+[
+  {
+    "companyId": "1",
+    "user": "Anna P.",
+    "rating": 5,
+    "comment": "Professional and very kind. Helped me in English and Serbian.",
+    "date": "2025-06-02"
+  },
+  {
+    "companyId": "1",
+    "user": "Marko S.",
+    "rating": 4,
+    "comment": "Good service, but waiting time was longer than expected.",
+    "date": "2025-06-10"
+  },
+  {
+    "companyId": "2",
+    "user": "Lena K.",
+    "rating": 5,
+    "comment": "Fantastic! Spoke perfect Russian and very friendly.",
+    "date": "2025-05-29"
+  },
+  {
+    "companyId": "3",
+    "user": "Thomas M.",
+    "rating": 3,
+    "comment": "Service was OK, but no one spoke English well.",
+    "date": "2025-06-12"
+  },
+  {
+    "companyId": "2",
+    "user": "Ivana T.",
+    "rating": 5,
+    "comment": "Loved the atmosphere. Highly recommended!",
+    "date": "2025-06-01"
+  },
+  {
+    "companyId": "4",
+    "user": "Yuki N.",
+    "rating": 4,
+    "comment": "Clean, efficient, and polite. Speaks German and Serbian.",
+    "date": "2025-07-01"
+  }
+]
