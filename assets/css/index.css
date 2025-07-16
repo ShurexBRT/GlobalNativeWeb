@@ -9,6 +9,7 @@ body {
 header.header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
   padding: 1rem 1.2rem;
   background-color: #f9fbff;
@@ -157,14 +158,13 @@ section h2 {
   margin-top: 0.6rem;
 }
 /* === Hamburger ikonica === */
-.menu-icon {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  font-size: 2rem;
-  color: #002b80;
+
+.hamburger {
+  background: none;
+  border: none;
   cursor: pointer;
-  z-index: 1001;
+  font-size: 24px;
+  padding: 8px;
 }
 
 /* === Drawer meni (slide-in s desne strane) === */
