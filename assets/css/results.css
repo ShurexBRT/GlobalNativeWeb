@@ -101,3 +101,6 @@ main.main {
   color: #888;
   padding: 2rem 1rem;
 }
+.a img.logo{
+  display: block;
+}

@@ -148,3 +148,7 @@ main.main {
   pointer-events: none;
   opacity: 0.95;
 }
+
+.a img.logo {
+  display: block;
+}
