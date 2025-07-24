@@ -16,4 +16,3 @@ if (!hamburgerBtn || !menuDrawer) return;
 
 // (Optional) 
 Logout handling function logoutUser() { import('https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js') .then(({ getAuth, signOut }) => { const auth = getAuth(); signOut(auth) .then(() => { window.location.href = 'welcome.html'; }) .catch((error) => { console.error('Logout error:', error); }); }); } });
-
