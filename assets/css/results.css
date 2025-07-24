@@ -178,3 +178,57 @@ body {
 .btn-primary:hover {
   background-color: #0046cc;
 }
+/* Mobile optimizacija za empty state */
+@media (max-width: 480px) {
+  .results-container {
+    padding: 1rem;                   /* manji padding */
+  }
+  .empty-state {
+    padding: 1.5rem 0;              /* vertikalni razmak */
+  }
+  .empty-state img {
+    max-width: 70%;                 /* slika manja */
+    height: auto;
+    margin: 0 auto 1rem;            /* centriranje + margin */
+    display: block;
+  }
+  .empty-state h2 {
+    font-size: 1.3rem;              /* manji naslov */
+    margin-bottom: 0.5rem;
+  }
+  .empty-state p {
+    font-size: 0.9rem;              /* manji paragraf */
+    margin-bottom: 1rem;
+  }
+  .btn-primary {
+    width: 100%;                    /* full-width dugme */
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile optimizacija za rezultat-kartice */
+@media (max-width: 480px) {
+  .cards {
+    gap: 1rem;                      /* razmak između kartica */
+  }
+  .card {
+    padding: 0;                     /* manje paddinga unutar kartice */
+  }
+  .card-header h3 {
+    font-size: 1rem;                /* manji font za naslov firme */
+  }
+  .subline {
+    font-size: 0.85rem;             /* manji font za podnaslov */
+  }
+  .tags {
+    gap: 0.3rem;                    /* gušći tagovi */
+  }
+  .pill {
+    font-size: 0.8rem;              /* manji text */
+    padding: 0.3rem 0.6rem;
+  }
+  .actions {
+    gap: 0.5rem;                    /* manji gap među ikonama */
+  }
+}
