@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maylo – My Account</title>
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/account.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <img src="assets/maylo/maylo.png" alt="Maylo logo" class="logo" />
+    <span class="brand">Maylo</span>
+    <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+
+  <div id="menuDrawer" class="drawer">
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
+  </div>
+
+  <main class="container account-container">
+    <section class="profile-preview">
+      <div class="maylo-animation">
+        <img src="assets/maylo/maylo-robot.png" alt="Maylo Robot" />
+      </div>
+      <div class="user-info">
+        <img id="avatar" class="avatar" src="assets/img/avatar-placeholder.png" alt="Your Avatar" />
+        <h1 id="userName">Your Name</h1>
+        <p id="userEmail">you@example.com</p>
+      </div>
+    </section>
+
+    <h2>Edit your profile</h2>
+    <form id="accountForm">
+      <div class="field-group">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required />
+      </div>
+
+      <div class="field-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="field-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" />
+      </div>
+
+      <div class="field-group">
+        <label>Language I speak</label>
+        <div class="language-pills" id="languagePills"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <a href="change-password.html" class="change-password">Change password</a>
+      </div>
+
+      <button type="submit" class="btn-primary">Save changes</button>
+      <button type="button" id="deleteAccount" class="btn-delete">Delete account</button>
+      <button type="button" id="logoutBtn" class="btn-logout">Logout</button>
+    </form>
+  </main>
+
+  <script defer src="assets/js/menu.js"></script>
+  <script defer src="assets/js/account.js"></script>
+</body>
+</html>
