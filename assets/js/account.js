@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const userEmailEl = document.getElementById('userEmail');
   const avatarEl = document.getElementById('avatar');
 
-  // Supported languages
-  const languages = ['Russian','German','Spanish','Ukrainian'];
-
-  // Load or init profile
+  // Load profile from localStorage
   let profile = JSON.parse(localStorage.getItem('userProfile') || '{}');
-  // Populate fields
   fullName.value = profile.fullName || '';
   email.value = profile.email || '';
   city.value = profile.city || '';
@@ -25,33 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
   userEmailEl.textContent = profile.email || 'you@example.com';
   if (profile.avatar) avatarEl.src = profile.avatar;
 
-  // Render language pills
-  languages.forEach(lang => {
-    const pill = document.createElement('span');
-    pill.className = 'pill';
-    pill.textContent = lang;
-    if ((profile.languages||[]).includes(lang)) pill.classList.add('selected');
-    pill.addEventListener('click', () => {
-      pill.classList.toggle('selected');
-    });
-    langContainer.appendChild(pill);
-  });
+  // Fetch unique languages from firms.json
+  fetch('assets/company-list/firms.json')
+    .then(res => res.json())
+    .then(firms => {
+      const languages = [...new Set(firms.flatMap(f => f.jezici))].sort();
+      languages.forEach(lang => {
+        const pill = document.createElement('span');
+        pill.className = 'pill';
+        pill.textContent = lang.charAt(0).toUpperCase() + lang.slice(1);
+        if ((profile.languages || []).includes(lang)) pill.classList.add('selected');
+        pill.addEventListener('click', () => {
+          pill.classList.toggle('selected');
+        });
+        langContainer.appendChild(pill);
+      });
+    })
+    .catch(err => console.error('Error loading languages:', err));
 
-  // Save changes
   form.addEventListener('submit', e => {
     e.preventDefault();
     profile.fullName = fullName.value;
     profile.email = email.value;
     profile.city = city.value;
-    profile.languages = Array.from(langContainer.querySelectorAll('.selected')).map(p=>p.textContent);
+    profile.languages = Array.from(langContainer.querySelectorAll('.selected')).map(p => p.textContent.toLowerCase());
     localStorage.setItem('userProfile', JSON.stringify(profile));
     alert('Profile saved!');
-    // Update preview
     userNameEl.textContent = profile.fullName;
     userEmailEl.textContent = profile.email;
   });
 
-  // Delete account
   deleteBtn.addEventListener('click', () => {
     if (confirm('Are you sure you want to delete your account?')) {
       localStorage.removeItem('userProfile');
@@ -60,9 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Logout
   logoutBtn.addEventListener('click', () => {
-    // Clear session if any
     window.location.href = 'welcome.html';
   });
 });
