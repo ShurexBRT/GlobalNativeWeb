@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const popularGrid = document.getElementById('popularBranchesGrid');
 
   // Popuni dropdown granama iz firms.json
-  fetch('firms.json')
+  fetch('assets/company-list/firms.json')
     .then(response => response.json())
     .then(data => {
       const branches = [...new Set(data.map(item => item.branch))].sort();
