@@ -1,3 +1,5 @@
+// assets/js/search-handler.js
+
 document.addEventListener('DOMContentLoaded', async () => {
   const resultsList = document.getElementById('resultsList');
   const spinner = document.getElementById('spinner');
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     doktor: 'local_hospital',
     veterinar: 'pets',
     'knjigovođa': 'calculate',
-    'knjigovodja': 'calculate',
+    knjigovodja: 'calculate',
     'auto-servis': 'build',
     električar: 'electrical_services',
     frizer: 'content_cut',
@@ -60,7 +62,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     vodoinstalater: 'plumbing'
   };
 
-  // Utility functions
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -91,9 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const pageSize = 10;
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        loadPage();
-      }
+      if (entry.isIntersecting) loadPage();
     });
   }, { rootMargin: '200px' });
 
@@ -101,12 +100,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadPage();
   observer.observe(spinner);
 
-  // Render a page of results
+  // Load a page of results
   function loadPage() {
     const start = page * pageSize;
     const end = start + pageSize;
     const chunk = filtered.slice(start, end);
-    chunk.forEach(renderCard);
+    chunk.forEach(firma => renderCard(firma));
     page++;
     if (page * pageSize >= filtered.length) {
       spinner.classList.add('hidden');
@@ -114,16 +113,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Render individual card
+  // Render individual card wrapped in link
   function renderCard(firma) {
+    const link = document.createElement('a');
+    link.href = `profile.html?firma=${encodeURIComponent(firma.id)}`;
+    link.className = 'card-link';
+
     const card = document.createElement('div');
     card.className = 'card';
 
     // Header with title and favorite button
     const header = document.createElement('div');
     header.className = 'card-header';
+
     const title = document.createElement('h3');
     title.textContent = firma.naziv;
+
     const favBtn = document.createElement('button');
     favBtn.className = 'favorite-btn';
     favBtn.setAttribute('aria-label', 'Save');
@@ -135,6 +140,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.stopPropagation();
       toggleFavorite(firma.id, favIcon);
     });
+
     header.append(title, favBtn);
 
     // Subline with category icon and location
@@ -152,7 +158,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     img.alt = firma.naziv;
     img.loading = 'lazy';
 
-    // Tags: service type and languages
+    // Tags: category and languages
     const tagsDiv = document.createElement('div');
     tagsDiv.className = 'tags';
     const catPill = document.createElement('span');
@@ -174,31 +180,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Action buttons
     const actions = document.createElement('div');
     actions.className = 'actions';
-    const callBtn = document.createElement('button');
-    callBtn.className = 'icon-btn';
-    callBtn.setAttribute('aria-label', 'Call');
-    callBtn.innerHTML = '<span class="material-icons">call</span>';
-    callBtn.addEventListener('click', () => window.location.href = `tel:${firma.telefon}`);
-    const emailBtn = document.createElement('button');
-    emailBtn.className = 'icon-btn';
-    emailBtn.setAttribute('aria-label', 'Email');
-    emailBtn.innerHTML = '<span class="material-icons">email</span>';
-    emailBtn.addEventListener('click', () => window.location.href = `mailto:${firma.email}`);
-    const mapBtn = document.createElement('button');
-    mapBtn.className = 'icon-btn';
-    mapBtn.setAttribute('aria-label', 'Open in Maps');
-    mapBtn.innerHTML = '<span class="material-icons">open_in_new</span>';
-    mapBtn.addEventListener('click', () => window.open(
-      `https://maps.google.com/?q=${encodeURIComponent(firma.adresa + ', ' + firma.grad + ', ' + firma.drzava)}`, '_blank'
+    const callBtn = createActionButton('call', () => window.location.href = `tel:${firma.telefon}`);
+    const emailBtn = createActionButton('email', () => window.location.href = `mailto:${firma.email}`);
+    const mapBtn = createActionButton('open_in_new', () => window.open(
+      `https://maps.google.com/?q=${encodeURIComponent(firma.adresa + ', ' + firma.grad + ', ' + firma.drzava)}`,
+      '_blank'
     ));
     actions.append(callBtn, emailBtn, mapBtn);
 
-    // Assemble card
+    // Assemble and append
     card.append(header, subline, img, tagsDiv, addr, actions);
-    resultsList.appendChild(card);
+    link.append(card);
+    resultsList.appendChild(link);
   }
 
-  // Show empty state
+  function createActionButton(iconName, onClick) {
+    const btn = document.createElement('button');
+    btn.className = 'icon-btn';
+    btn.setAttribute('aria-label', iconName);
+    const span = document.createElement('span');
+    span.className = 'material-icons';
+    span.textContent = iconName;
+    btn.append(span);
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      onClick();
+    });
+    return btn;
+  }
+
   function showEmpty() {
     spinner.classList.add('hidden');
     emptyState.classList.remove('hidden');

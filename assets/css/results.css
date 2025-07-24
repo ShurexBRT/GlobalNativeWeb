@@ -268,4 +268,11 @@
   .actions {
     gap: 0.5rem;                    /* manji gap među ikonama */
   }
+
+  .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 }
