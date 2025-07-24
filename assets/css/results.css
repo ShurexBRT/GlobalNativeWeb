@@ -9,7 +9,7 @@
   box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
   padding: 2rem 1.2rem;
-  z-index: 1000;
+  z-index: 2000;
 }
 .drawer.open {
   right: 0;
