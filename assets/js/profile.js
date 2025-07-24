@@ -1,100 +1,106 @@
-document.addEventListener("DOMContentLoaded", () => {
+// assets/js/profile.js
+
+document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const companyId = parseInt(urlParams.get("firma"));
-  const companySection = document.getElementById("companyDetails");
-  const reviewsSection = document.getElementById("companyReviews");
+  const companyId = urlParams.get('firma');
+  const companySection = document.getElementById('company-details');
+  const reviewsSection = document.getElementById('reviews-section');
 
   if (!companyId) {
-    companySection.innerHTML = "<p>Invalid company ID.</p>";
+    companySection.innerHTML = '<p>Invalid company ID.</p>';
     return;
   }
 
-  // Učitaj podatke iz firms.json
-  fetch("assets/company-list/firms.json")
-    .then((res) => res.json())
-    .then((firms) => {
-      const firma = firms.find((f) => f.id === companyId);
+  // Load firms data
+  fetch('assets/company-list/firms.json')
+    .then(res => res.json())
+    .then(firms => {
+      const firma = firms.find(f => f.id === companyId);
       if (!firma) {
-        companySection.innerHTML = "<p>Company not found.</p>";
+        companySection.innerHTML = '<p>Company not found.</p>';
         return;
       }
 
-      const isSaved = JSON.parse(localStorage.getItem("saved") || "[]").includes(firma.id);
+      // Determine saved state
+      const savedList = JSON.parse(localStorage.getItem('saved') || '[]');
+      let isSaved = savedList.includes(firma.id);
 
+      // Render profile details
       companySection.innerHTML = `
         <div class="profile-header">
-          <h1>${firma.name}</h1>
-          <span class="badge">${firma.category}</span>
+          <h1>${firma.naziv}</h1>
+          <button id="saveBtn" class="save-btn">
+            ${isSaved ? 'Remove from saved' : 'Save to favorites'}
+          </button>
         </div>
         <div class="rating">
-          ${"★".repeat(firma.rating || 0)} (${firma.reviews || 0} reviews)
+          ${'★'.repeat(firma.rating || 0)} ${firma.rating ? firma.rating.toFixed(1) : ''} 
+          <span>(${firma.reviewsCount || 0} reviews)</span>
         </div>
-        <p class="desc">${firma.description || "No description available."}</p>
-        <div class="location">
-          <span class="material-icons">location_on</span> ${firma.city}, ${firma.country}
-        </div>
-        <div class="languages">
-          <span class="material-icons">language</span>
-          ${firma.languages.join(", ")}
+        <div class="tags">
+          <span class="tag">${firma.kategorija.charAt(0).toUpperCase() + firma.kategorija.slice(1)}</span>
+          <span class="tag">${firma.jezici.map(l => l.charAt(0).toUpperCase() + l.slice(1)).join(', ')}</span>
         </div>
         <div class="actions">
-          <a href="tel:${firma.phone}" class="btn-call">
-            <span class="material-icons">call</span> Call
-          </a>
-          <a href="mailto:${firma.email}" class="btn-email">
-            <span class="material-icons">mail</span> Email
-          </a>
-          <a href="https://maps.google.com/?q=${encodeURIComponent(firma.address)}" target="_blank" class="btn-map">
-            <span class="material-icons">map</span> Map
+          <a href="tel:${firma.telefon}"><span class="material-icons">call</span> Call</a>
+          <a href="mailto:${firma.email}"><span class="material-icons">email</span> Email</a>
+          <a href="https://maps.google.com/?q=${encodeURIComponent(firma.adresa + ', ' + firma.grad + ', ' + firma.drzava)}" target="_blank">
+            <span class="material-icons">open_in_new</span> Open in Maps
           </a>
         </div>
-
-        <div class="save-firm">
-          <button id="saveBtn" class="save-btn">
-            ${isSaved ? "Remove from saved" : "Save to favorites"}
-          </button>
+        <div class="location">
+          <span class="material-icons">location_on</span> ${firma.adresa}, ${firma.grad}
+        </div>
+        <div class="description">
+          ${firma.opis || 'No description available.'}
         </div>
       `;
 
-      // Save/Remove from localStorage
-      const saveBtn = document.getElementById("saveBtn");
-      saveBtn.addEventListener("click", () => {
-        const saved = JSON.parse(localStorage.getItem("saved") || "[]");
-        const index = saved.indexOf(firma.id);
-
-        if (index === -1) {
-          saved.push(firma.id);
-          saveBtn.textContent = "Remove from saved";
+      // Save/Remove handler
+      const saveBtn = document.getElementById('saveBtn');
+      saveBtn.addEventListener('click', () => {
+        const list = JSON.parse(localStorage.getItem('saved') || '[]');
+        if (list.includes(firma.id)) {
+          // remove
+          const idx = list.indexOf(firma.id);
+          list.splice(idx, 1);
+          saveBtn.textContent = 'Save to favorites';
+          isSaved = false;
         } else {
-          saved.splice(index, 1);
-          saveBtn.textContent = "Save to favorites";
+          // add
+          list.push(firma.id);
+          saveBtn.textContent = 'Remove from saved';
+          isSaved = true;
         }
-
-        localStorage.setItem("saved", JSON.stringify(saved));
+        localStorage.setItem('saved', JSON.stringify(list));
       });
+    })
+    .catch(err => {
+      console.error('Error loading firms:', err);
+      companySection.innerHTML = '<p>Error loading company details.</p>';
     });
 
-  // Učitaj recenzije
-  fetch("assets/company-list/reviews.json")
-    .then((res) => res.json())
-    .then((reviewsData) => {
-      const reviews = reviewsData[companyId] || [];
-
-      if (reviews.length === 0) {
-        reviewsSection.innerHTML = "";
-        return;
+  // Load reviews
+  fetch('assets/company-list/reviews.json')
+    .then(res => res.json())
+    .then(data => {
+      const reviews = data[companyId] || [];
+      if (!reviews.length) {
+        return; // no reviews
       }
-
-      reviewsSection.innerHTML = "<h2>Reviews</h2>";
-      reviews.forEach((review) => {
-        const reviewCard = document.createElement("div");
-        reviewCard.className = "review-card";
-        reviewCard.innerHTML = `
-          <h4>${review.user}</h4>
-          <div class="stars">${"★".repeat(review.rating)}</div>
-          <p>${review.comment}</p>
+      reviewsSection.innerHTML = '<h2>Reviews</h2>';
+      reviews.forEach(r => {
+        const div = document.createElement('div');
+        div.className = 'review';
+        div.innerHTML = `
+          <div class="meta">
+            <span>${r.user}</span>
+            <span>${'★'.repeat(r.rating)}</span>
+          </div>
+          <div class="text">${r.comment}</div>
         `;
-        reviewsSection.appendChild(reviewCard);
+        reviewsSection.appendChild(div);
       });
-    });
+    })
+    .catch(err => console.error('Error loading reviews:', err));
 });
