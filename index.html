@@ -14,7 +14,6 @@
   <header class="header">
     <img src="assets/maylo/maylo.png" alt="Maylo logo" class="logo" />
     <span class="brand">Maylo</span>
-
     <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
       <span class="material-icons">menu</span>
     </button>
@@ -35,23 +34,21 @@
     </div>
 
     <form id="searchForm" class="search-form">
+      <!-- Branch selector -->
       <select id="branchSelect" name="branch">
         <option value="" disabled selected>Izaberi branšu</option>
-        <!-- JS će ubaciti ostale opcije ovde -->
+        <!-- Populated via main.js -->
       </select>
-      <input type="text" id="locationInput" placeholder="Location" />
 
-      <div class="languages">
-        <label><input type="checkbox" value="en" /> English</label>
-        <label><input type="checkbox" value="de" /> German</label>
-        <label><input type="checkbox" value="sr" /> Serbian</label>
-        <label><input type="checkbox" value="hr" /> Croatian</label>
-        <label><input type="checkbox" value="bs" /> Bosnian</label>
-        <label><input type="checkbox" value="mk" /> Macedonian</label>
-        <label><input type="checkbox" value="sl" /> Slovenian</label>
-        <label><input type="checkbox" value="ru" /> Russian</label>
-        <label><input type="checkbox" value="uk" /> Ukrainian</label>
-      </div>
+      <!-- Country selector (cascading) -->
+      <select id="countrySelect" name="drzava" disabled>
+        <option value="">Bilo koja država</option>
+      </select>
+
+      <!-- City selector (cascading) -->
+      <select id="citySelect" name="grad" disabled>
+        <option value="">Bilo koji grad</option>
+      </select>
 
       <button type="submit" class="btn-primary">
         <span class="material-icons">search</span> Search
@@ -62,14 +59,14 @@
   <section class="popular">
     <h2>Popular branches</h2>
     <div id="popularBranchesGrid" class="popular-branches-grid">
-      <!-- main.js će popuniti ovu grid listu -->
+      <!-- Populated via main.js -->
     </div>
   </section>
 
   <section class="results">
     <h2>Top-rated services near you</h2>
     <div class="cards" id="resultsList">
-      <!-- Auto-generated -->
+      <!-- Auto-generated via search-handler.js -->
     </div>
   </section>
 
