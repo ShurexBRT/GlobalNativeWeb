@@ -1,89 +1,38 @@
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 1rem;
-  color: #1a1a1a;
+/* === Drawer Menu Styles (shared) === */
+.drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  height: 100vh; width: 260px;
+  background: #fff;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  transition: right .3s ease;
+  padding: 2rem 1.2rem;
+  z-index: 2000;
 }
+.drawer.open { right: 0; }
+.drawer li:hover { background: #f5f8ff; border-radius: 6px; padding-left: .4rem; }
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* === Base & Layout === */
+body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #fff; color: #1a1a1a; }
+.header { display:flex; align-items:center; justify-content:space-between; padding:1rem; background:#f9fbff; z-index:2001; }
+.container { max-width: 500px; margin: 2rem auto; padding: 0 1rem; }
 
-.maylo-img {
-  width: 100px;
-  margin-bottom: 1rem;
-}
+/* === Form Styles === */
+form { display: flex; flex-direction: column; gap:1.2rem; }
+.field-group label { font-weight:600; margin-bottom:.4rem; display:block; }
+.stars { display:flex; justify-content:center; gap:.4rem; font-size:2rem; color:#ccc; cursor:pointer; }
+.stars .material-icons.filled { color:#ffaa00; }
+textarea, input[type="date"] { width:100%; padding:.8rem; font-size:1rem; border:1px solid #ddd; border-radius:8px; }
+textarea { resize:none; height:120px; }
+.submit-btn { background:#0057ff; color:#fff; padding:.8rem; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:background .3s; }
+.submit-btn:hover { background:#0046cc; }
+.note { text-align:center; font-size:.85rem; color:#888; }
 
-h1 {
-  font-size: 1.3rem;
-  text-align: center;
-  color: #002b80;
-  margin-bottom: 1.5rem;
-}
+/* === Validation & Feedback === */
+.error-msg { color:#ff5252; font-size:.85rem; margin-top:.3rem; height:1em; }
+.invalid { border-color:#ff5252 !important; }
+.stars.invalid .material-icons { color:#ff5252; }
 
-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.stars {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  font-size: 2rem;
-  color: #cccccc;
-  cursor: pointer;
-}
-
-.stars .material-icons.filled {
-  color: #ffaa00;
-}
-
-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  resize: none;
-}
-
-input[type="date"] {
-  padding: 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.submit-btn {
-  background-color: #0057ff;
-  color: white;
-  padding: 0.8rem;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #0046cc;
-}
-
-.note {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #888;
-}
-.a img.logo {
-  display: block;
-}
+/* === Success message === */
+.success-msg { color:#2e7d32; text-align:center; margin-top:1rem; }
+.hidden { display:none; }

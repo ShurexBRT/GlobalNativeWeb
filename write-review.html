@@ -2,40 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leave a Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maylo – Write a Review</title>
+  <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="stylesheet" href="assets/css/review.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="icon"  href="assets/maylo/maylo-logo.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html">
-    <img src="assets/maylo/maylo-company-profile.png" alt="Maylo writing" class="maylo-img" />
-    </a>
+  <header class="header">
+    <img src="assets/maylo/maylo.png" alt="Maylo logo" class="logo"/>
+    <span class="brand">Maylo</span>
+    <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
 
-    <h1 id="companyName">Leave a review for [Company Name]</h1>
-
-    <form id="reviewForm">
-      <div class="stars" id="starsContainer">
-        <!-- JS will render stars here -->
-      </div>
-
-      <textarea 
-        id="reviewText" 
-        maxlength="200" 
-        placeholder="Write your experience..." 
-        required>
-      </textarea>
-
-      <input type="date" id="visitDate" required />
-
-      <button type="submit" class="submit-btn">Submit review</button>
-      <p class="note">Your review will be verified before publishing.</p>
-    </form>
+  <div id="menuDrawer" class="drawer">
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
   </div>
 
-  <script src="assets/js/review.js" type="module"></script>
+  <main class="container">
+    <h1>Write a Review</h1>
+    <form id="reviewForm">
+      <div class="field-group">
+        <label for="rating">Your rating</label>
+        <div class="stars" id="rating">
+          <span class="material-icons" data-value="1">star</span>
+          <span class="material-icons" data-value="2">star</span>
+          <span class="material-icons" data-value="3">star</span>
+          <span class="material-icons" data-value="4">star</span>
+          <span class="material-icons" data-value="5">star</span>
+        </div>
+        <div class="error-msg" data-for="rating"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="reviewText">Your review</label>
+        <textarea id="reviewText" name="reviewText" maxlength="200" required></textarea>
+        <div class="error-msg" data-for="reviewText"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="visitDate">Date of visit</label>
+        <input type="date" id="visitDate" name="visitDate" required />
+        <div class="error-msg" data-for="visitDate"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Review</button>
+      <div class="success-msg hidden">Thank you! Your review has been submitted.</div>
+    </form>
+    <p class="note">Max 200 characters. Be respectful and constructive.</p>
+  </main>
+
+  <script defer src="assets/js/menu.js"></script>
+  <script defer src="assets/js/review.js"></script>
 </body>
 </html>

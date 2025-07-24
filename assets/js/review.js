@@ -1,105 +1,75 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { firebaseConfig } from './firebase-config.js';
+// assets/js/review.js
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('reviewForm');
+  const stars = document.querySelectorAll('.stars .material-icons');
+  const reviewText = document.getElementById('reviewText');
+  const visitDate = document.getElementById('visitDate');
+  const errorMsgs = document.querySelectorAll('.error-msg');
+  const successMsg = document.querySelector('.success-msg');
+  let selectedRating = 0;
 
-// === DOM elementi
-const form = document.getElementById("reviewForm");
-const starsContainer = document.getElementById("starsContainer");
-const reviewText = document.getElementById("reviewText");
-const visitDate = document.getElementById("visitDate");
-const companyNameTitle = document.getElementById("companyName");
+  // Set max date to today
+  visitDate.max = new Date().toISOString().split('T')[0];
 
-let selectedRating = 0;
-let companyId = null;
-
-// === Prikaz imena firme iz URL parametra
-const params = new URLSearchParams(window.location.search);
-companyId = params.get("firma");
-
-if (!companyId) {
-  alert("Missing company ID.");
-  window.location.href = "index.html";
-}
-
-// === Učitavanje firme da bismo prikazali naziv
-fetch("assets/company-list/firms.json")
-  .then(res => res.json())
-  .then(data => {
-    const company = data.find(f => String(f.id) === companyId);
-    if (company) {
-      companyNameTitle.textContent = `Leave a review for ${company.naziv}`;
-    }
-  });
-
-// === Zvezdice
-for (let i = 1; i <= 5; i++) {
-  const star = document.createElement("span");
-  star.classList.add("material-icons");
-  star.textContent = "star";
-  star.dataset.value = i;
-
-  star.addEventListener("click", () => {
-    selectedRating = i;
-    updateStars();
-  });
-
-  starsContainer.appendChild(star);
-}
-
-function updateStars() {
-  const allStars = starsContainer.querySelectorAll(".material-icons");
-  allStars.forEach((star, index) => {
-    if (index < selectedRating) {
-      star.classList.add("filled");
-    } else {
-      star.classList.remove("filled");
-    }
-  });
-}
-
-// === Submit forma
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const review = reviewText.value.trim();
-  const date = visitDate.value;
-
-  if (!selectedRating || !review || !date) {
-    alert("All fields are required.");
-    return;
-  }
-
-  if (review.length > 200) {
-    alert("Review must be less than 200 characters.");
-    return;
-  }
-
-  let userName = "Anonymous";
-
-  await new Promise((resolve) => {
-    onAuthStateChanged(auth, (user) => {
-      if (user && user.displayName) {
-        userName = user.displayName;
-      }
-      resolve();
+  // Rating click handler
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.dataset.value);
+      stars.forEach(s => s.classList.toggle('filled', parseInt(s.dataset.value) <= selectedRating));
     });
   });
 
-  const newReview = {
-    companyId: companyId,
-    user: userName,
-    rating: selectedRating,
-    comment: review,
-    date: date
-  };
+  // Clear errors
+  function clearErrors() {
+    errorMsgs.forEach(e => e.textContent = '');
+    stars.forEach(s => s.classList.remove('invalid'));
+    reviewText.classList.remove('invalid');
+    visitDate.classList.remove('invalid');
+  }
 
-  // === Ovde ide slanje na server ili API (za sad samo loguj)
-  console.log("Review saved:", newReview);
+  // Show error under field
+  function showError(field, msg) {
+    const err = document.querySelector(`.error-msg[data-for="${field}"]`);
+    err.textContent = msg;
+    if (field === 'rating') {
+      document.querySelector('.stars').classList.add('invalid');
+    } else {
+      document.getElementById(field).classList.add('invalid');
+    }
+  }
 
-  // === Redirect posle slanja
-  alert("Review submitted!");
-  window.location.href = "index.html";
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    clearErrors();
+    successMsg.classList.add('hidden');
+
+    let hasError = false;
+    if (selectedRating === 0) {
+      showError('rating', 'Please select a rating.');
+      hasError = true;
+    }
+    if (!reviewText.value.trim()) {
+      showError('reviewText', 'Review cannot be empty.');
+      hasError = true;
+    }
+    if (!visitDate.value) {
+      showError('visitDate', 'Select visit date.');
+      hasError = true;
+    }
+
+    if (hasError) {
+      // focus first invalid
+      const firstErr = document.querySelector('.invalid');
+      firstErr && firstErr.focus && firstErr.focus();
+      return;
+    }
+
+    // TODO: actually POST review to backend
+    // For MVP, just show success
+    successMsg.classList.remove('hidden');
+    form.reset();
+    stars.forEach(s => s.classList.remove('filled'));
+    selectedRating = 0;
+  });
 });
