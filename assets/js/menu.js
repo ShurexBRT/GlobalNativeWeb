@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menuDrawer.classList.remove('open');
       switch (index) {
         case 0:
-          window.location.href = 'profile-user.html';
+          window.location.href = 'account.html';
           break;
         case 1:
           window.location.href = 'saved.html';
