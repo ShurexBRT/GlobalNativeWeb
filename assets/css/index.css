@@ -56,7 +56,8 @@ header.header {
   margin: 0 auto;
 }
 
-.search-form input[type="text"] {
+.search-form input[type="text"],
+.search-form select {
   padding: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -109,14 +110,12 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-.branches,
 .cards {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.branch-card,
 .card {
   background-color: #f8f9fc;
   border-radius: 8px;
@@ -124,18 +123,10 @@ section h2 {
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
-.branch-card h3,
 .card h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
-}
-
-.branch-card i {
-  font-size: 2rem;
-  color: #0057ff;
-  display: block;
-  margin-bottom: 0.4rem;
 }
 
 .card p {
@@ -157,6 +148,7 @@ section h2 {
   display: inline-block;
   margin-top: 0.6rem;
 }
+
 /* === Hamburger ikonica === */
 
 .hamburger {
@@ -168,6 +160,7 @@ section h2 {
 }
 
 /* === Drawer meni (slide-in s desne strane) === */
+
 .drawer {
   position: fixed;
   top: 0;
@@ -207,4 +200,35 @@ section h2 {
   background-color: #f5f8ff;
   border-radius: 6px;
   padding-left: 0.4rem;
+}
+
+/* === New Styles for Branch Dropdown and Popular Grid === */
+
+#branchSelect {
+  /* Styles match text inputs */
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.popular-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.popular-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.popular-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
 }
