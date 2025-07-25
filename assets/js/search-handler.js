@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadPage();
   observer.observe(spinner);
 
-  // Load a page of results
   function loadPage() {
     const start = page * pageSize;
     const end = start + pageSize;
@@ -113,22 +112,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Render individual card wrapped in link
+  // Render individual card with click-handler navigation
   function renderCard(firma) {
-    const link = document.createElement('a');
-    link.href = `profile.html?firma=${encodeURIComponent(firma.id)}`;
-    link.className = 'card-link';
-
     const card = document.createElement('div');
     card.className = 'card';
+    card.style.cursor = 'pointer';
+
+    // Navigate to profile unless clicking a CTA or favorite button
+    card.addEventListener('click', e => {
+      if (e.target.closest('.icon-btn, .favorite-btn')) return;
+      window.location.href = `profile.html?firma=${encodeURIComponent(firma.id)}`;
+    });
 
     // Header with title and favorite button
     const header = document.createElement('div');
     header.className = 'card-header';
-
     const title = document.createElement('h3');
     title.textContent = firma.naziv;
-
     const favBtn = document.createElement('button');
     favBtn.className = 'favorite-btn';
     favBtn.setAttribute('aria-label', 'Save');
@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.stopPropagation();
       toggleFavorite(firma.id, favIcon);
     });
-
     header.append(title, favBtn);
 
     // Subline with category icon and location
@@ -188,10 +187,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     ));
     actions.append(callBtn, emailBtn, mapBtn);
 
-    // Assemble and append
+    // Assemble card
     card.append(header, subline, img, tagsDiv, addr, actions);
-    link.append(card);
-    resultsList.appendChild(link);
+    resultsList.appendChild(card);
   }
 
   function createActionButton(iconName, onClick) {
