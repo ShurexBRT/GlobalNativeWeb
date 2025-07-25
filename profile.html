@@ -1,47 +1,40 @@
+<!-- profile.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company Profile • Maylo</title>
-  <link rel="stylesheet" href="assets/css/profile.css" />
-  <link rel="icon"  href="assets/maylo/maylo-logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maylo – Company Profile</title>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/profile.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
-
   <header class="header">
     <a href="index.html">
-    <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"  />
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
     </a>
     <span class="brand">Maylo</span>
+    <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+      <span class="material-icons">menu</span>
+    </button>
   </header>
-
   <div id="menuDrawer" class="drawer">
-  <ul>
-    <li><span class="material-icons">person</span> My Account</li>
-    <li><span class="material-icons">bookmark</span> Saved Services</li>
-    <li><span class="material-icons">rate_review</span> My Reviews</li>
-    <li><span class="material-icons">settings</span> Settings</li>
-    <li><span class="material-icons">logout</span> Logout</li>
-  </ul>
-</div>
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
+  </div>
 
-  <main class="main">
-    <section class="company" id="company-details">
-      <!-- Popunjava se JS-om -->
-    </section>
-
-    <section class="reviews" id="reviews-section">
-      <!-- Popunjava se JS-om -->
-    </section>
+  <main class="container">
+    <section id="company-details"></section>
+    <section id="reviews-section"></section>
   </main>
 
-  <img src="assets/maylo/maylo-company-profile.png" alt="Maylo robot" class="maylo-float" />
-
-  <script defer src="assets/js/profile.js"></script>
-  <script defer src="assets/js/lang.js"></script>
   <script defer src="assets/js/menu.js"></script>
+  <script defer src="assets/js/profile.js"></script>
 </body>
 </html>

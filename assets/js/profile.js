@@ -11,10 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Load firms and reviews together
   Promise.all([
-    fetch('assets/company-list/firms.json').then(res => res.json()),
-    fetch('assets/company-list/reviews.json').then(res => res.json())
+    fetch('assets/company-list/firms.json').then(r => r.json()),
+    fetch('assets/company-list/reviews.json').then(r => r.json())
   ])
   .then(([firms, reviewsData]) => {
     const firma = firms.find(f => f.id === companyId);
@@ -23,19 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Compute rating & count from reviews.json
+    // calculate average rating & count
     const reviews = reviewsData[companyId] || [];
     const count = reviews.length;
-    const avg = count
-      ? reviews.reduce((sum, r) => sum + r.rating, 0) / count
-      : 0;
-    const avgFixed = avg ? avg.toFixed(1) : '';
+    const avg = count ? reviews.reduce((sum, r) => sum + r.rating, 0) / count : 0;
+    const avgFixed = count ? avg.toFixed(1) : '0.0';
 
-    // Check saved state
-    const savedList = JSON.parse(localStorage.getItem('saved') || '[]');
-    let isSaved = savedList.includes(firma.id);
+    // saved state
+    const saved = JSON.parse(localStorage.getItem('saved') || '[]');
+    let isSaved = saved.includes(companyId);
 
-    // Render profile details, rating, and Write Review button
     companySection.innerHTML = `
       <div class="profile-header">
         <h1>${firma.naziv}</h1>
@@ -54,9 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="actions">
         <a href="tel:${firma.telefon}"><span class="material-icons">call</span> Call</a>
         <a href="mailto:${firma.email}"><span class="material-icons">email</span> Email</a>
-        <a href="https://maps.google.com/?q=${encodeURIComponent(
-          firma.adresa + ', ' + firma.grad + ', ' + firma.drzava
-        )}" target="_blank">
+        <a href="https://maps.google.com/?q=${encodeURIComponent(firma.adresa + ', ' + firma.grad + ', ' + firma.drzava)}" target="_blank">
           <span class="material-icons">open_in_new</span> Open in Maps
         </a>
       </div>
@@ -71,30 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
       </button>
     `;
 
-    // Save/Remove handler
-    const saveBtn = document.getElementById('saveBtn');
-    saveBtn.addEventListener('click', () => {
+    // save/remove handler
+    document.getElementById('saveBtn').addEventListener('click', () => {
       const list = JSON.parse(localStorage.getItem('saved') || '[]');
       if (isSaved) {
-        const idx = list.indexOf(firma.id);
-        list.splice(idx, 1);
-        saveBtn.textContent = 'Save to favorites';
+        list.splice(list.indexOf(companyId), 1);
       } else {
-        list.push(firma.id);
-        saveBtn.textContent = 'Remove from saved';
+        list.push(companyId);
       }
       isSaved = !isSaved;
       localStorage.setItem('saved', JSON.stringify(list));
+      document.getElementById('saveBtn').textContent = isSaved
+        ? 'Remove from saved'
+        : 'Save to favorites';
     });
 
-    // Write Review button handler
-    document
-      .getElementById('writeReview')
+    // write review button
+    document.getElementById('writeReview')
       .addEventListener('click', () => {
-        window.location.href = `write-review.html?firma=${encodeURIComponent(companyId)}`;
+        window.location.href = `write-review.html?firma=${companyId}`;
       });
 
-    // Render reviews below
+    // render reviews
     if (reviews.length) {
       reviewsSection.innerHTML = '<h2>Reviews</h2>';
       reviews.forEach(r => {
@@ -112,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
   .catch(err => {
-    console.error('Error loading profile data:', err);
+    console.error('Error loading profile:', err);
     companySection.innerHTML = '<p>Error loading company details.</p>';
   });
 

@@ -1,42 +1,45 @@
+<!-- saved.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saved Services – Maylo</title>
-  <link rel="stylesheet" href="assets/css/saved.css" />
-  <link rel="icon" href="assets/maylo/maylo-logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maylo – Saved Services</title>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/saved.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
   <header class="header">
     <a href="index.html">
-      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo" />
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
     </a>
-    <h1>Saved Services</h1>
+    <span class="brand">Maylo</span>
+    <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+      <span class="material-icons">menu</span>
+    </button>
   </header>
-
   <div id="menuDrawer" class="drawer">
-  <ul>
-    <li><span class="material-icons">person</span> My Account</li>
-    <li><span class="material-icons">bookmark</span> Saved Services</li>
-    <li><span class="material-icons">rate_review</span> My Reviews</li>
-    <li><span class="material-icons">settings</span> Settings</li>
-    <li><span class="material-icons">logout</span> Logout</li>
-  </ul>
-</div>
-
-  <main class="container" id="savedContainer">
-    <!-- JS će ovde ubaciti firmice -->
-  </main>
-
-  <div id="emptyState" class="empty-state hidden">
-    <img src="assets/maylo/maylo-saved-services.png" alt="Maylo saved" class="maylo-img" />
-    <p>You haven't saved any services yet.</p>
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
   </div>
 
-  <script defer src="assets/js/saved.js"></script>
+  <main class="container">
+    <div id="savedContainer"></div>
+    <div id="emptyState" class="empty-state hidden">
+      <img src="assets/img/no-results.png" alt="No saved services"/>
+      <h2>No saved services</h2>
+      <p>You haven't saved any services yet.</p>
+      <button id="resetSaved" class="btn-primary">Browse services</button>
+    </div>
+  </main>
+
   <script defer src="assets/js/menu.js"></script>
+  <script defer src="assets/js/saved.js"></script>
 </body>
 </html>
