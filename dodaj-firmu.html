@@ -1,93 +1,48 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title data-i18n="addFirmTitle">Dodaj firmu - Global Native Web</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon"  href="assets/maylo/maylo-logo.png" />
+  <title>Maylo – Register Your Business</title>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/dodaj-firmu.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
+  <header class="header">
+    <a href="index.html">
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
+    </a>
+    <span class="brand">Maylo</span>
+  </header>
 
-  <div class="breadcrumb">
-    <a href="index.html" data-i18n="backToSearch">← Nazad na pretragu</a>
-  </div>
-  
-  <section class="form-section">
-    <h1 data-i18n="addFirmHeading">Dodaj svoju firmu</h1>
-    <p data-i18n="addFirmSubheading">Popuni formu ispod i postani deo mreže lokalnih usluga koje govore tvoj jezik.</p>
+  <main class="container">
+    <h1>List Your Service</h1>
+    <div class="tier-bar">
+      <span class="tier">6 mo FREE (1–100)</span> |
+      <span class="tier">3 mo FREE (101–200)</span> |
+      <span class="tier">1 mo FREE (201+)</span>
+    </div>
+    <form id="providerSignup">
+      <label for="name">Company Name</label>
+      <input id="name" type="text" required/>
 
-    <form id="firmForm">
-      <label for="naziv" data-i18n="labelFirmName">Naziv firme *</label>
-      <input type="text" id="naziv" name="naziv" placeholder="Unesite naziv firme" required />
+      <label for="category">Category</label>
+      <input id="category" type="text" required/>
 
-      <label for="opis" data-i18n="labelFirmDescription">Opis firme *</label>
-      <textarea id="opis" name="opis" placeholder="Kratak opis usluge/firme" maxlength="500" required></textarea>
+      <label for="address">Address</label>
+      <input id="address" type="text" required/>
 
-      <label for="kategorija" data-i18n="labelCategory">Branša / Kategorija *</label>
-      <select id="kategorija" name="kategorija" required>
-        <option value="" data-i18n="optionChoose">-- Izaberite --</option>
-        <option value="advokat" data-i18n="catAdvokat">Advokat</option>
-        <option value="doktor" data-i18n="catDoktor">Doktor opšte prakse</option>
-        <option value="pedijatar" data-i18n="catPedijatar">Pedijatar</option>
-        <option value="stomatolog" data-i18n="catStomatolog">Stomatolog</option>
-        <option value="veterinar" data-i18n="catVeterinar">Veterinar</option>
-        <option value="knjigovođa" data-i18n="catKnjigovodja">Knjigovođa</option>
-        <option value="frizer" data-i18n="catFrizer">Frizer</option>
-        <option value="restoran" data-i18n="catRestoran">Restoran</option>
-        <option value="kafić" data-i18n="catKafic">Kafić</option>
-        <option value="moler" data-i18n="catMoler">Moler</option>
-        <option value="električar" data-i18n="catElektricar">Električar</option>
-        <option value="vodoinstalater" data-i18n="catVodoinstalater">Vodoinstalater</option>
-        <option value="auto-servis" data-i18n="catAutoServis">Auto servis</option>
-        <option value="prevodilac" data-i18n="catPrevodilac">Prevodilac</option>
-        <option value="psiholog" data-i18n="catPsiholog">Psiholog / Terapeut</option>
-      </select>
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" required/>
 
-      <label data-i18n="labelLanguages">Jezici koje govorite *</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="jezici" value="srpski" />🇷🇸 <span data-i18n="langSerbian">Srpski</span></label>
-        <label><input type="checkbox" name="jezici" value="hrvatski" />🇭🇷 <span data-i18n="langCroatian">Hrvatski</span></label>
-        <label><input type="checkbox" name="jezici" value="bosanski" />🇧🇦 <span data-i18n="langBosnian">Bosanski</span></label>
-        <label><input type="checkbox" name="jezici" value="engleski" />🇬🇧 <span data-i18n="langEnglish">Engleski</span></label>
-        <label><input type="checkbox" name="jezici" value="nemački" />🇩🇪 <span data-i18n="langGerman">Nemački</span></label>
-        <label><input type="checkbox" name="jezici" value="ruski" />🇷🇺 <span data-i18n="langRussian">Ruski</span></label>
-        <label><input type="checkbox" name="jezici" value="ukrajinski" />🇺🇦 <span data-i18n="langUkrainian">Ukrajinski</span></label>
-      </div>
+      <label for="email">Email</label>
+      <input id="email" type="email" required/>
 
-      <label for="grad" data-i18n="labelCity">Grad *</label>
-      <input type="text" id="grad" name="grad" placeholder="Unesite grad" required />
-
-      <label for="drzava" data-i18n="labelCountry">Država *</label>
-      <input type="text" id="drzava" name="drzava" placeholder="Unesite državu" required />
-
-      <label for="adresa" data-i18n="labelAddress">Adresa (ulica i broj) *</label>
-      <input type="text" id="adresa" name="adresa" placeholder="Unesite adresu firme" required />
-
-      <label for="email" data-i18n="labelEmail">Kontakt email *</label>
-      <input type="email" id="email" name="email" placeholder="npr. firma@gmail.com" required />
-
-      <label for="telefon" data-i18n="labelPhone">Telefon</label>
-      <input type="tel" id="telefon" name="telefon" placeholder="+49 123 456789" />
-
-      <label for="websajt" data-i18n="labelWebsite">Web sajt</label>
-      <input type="url" id="websajt" name="websajt" placeholder="https://vasafirma.com" />
-
-      <label for="slika" data-i18n="labelLogo">Logo firme (link slike)</label>
-      <input type="url" id="slika" name="slika" placeholder="https://vasafirma.com/logo.png" />
-
-      <label>
-        <input type="checkbox" name="uslovi" required />
-        <span data-i18n="labelTerms">Prihvatam uslove korišćenja</span>
-      </label>
-
-      <button type="submit" data-i18n="btnSubmit">Pošalji</button>
+      <button type="submit" class="btn-primary">Get Started</button>
     </form>
+  </main>
 
-    <p class="info" data-i18n="submissionInfo">Nakon provere, vaša firma biće vidljiva u rezultatima pretrage.</p>
-  </section>
-
-  <script src="assets/js/form-handler.js"></script>
-  <script src="assets/js/lang.js"></script>
+  <script defer src="assets/js/dodaj-firmu.js"></script>
 </body>
 </html>

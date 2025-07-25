@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maylo – Write a Review</title>
-  <link rel="stylesheet" href="assets/css/index.css" />
-  <link rel="stylesheet" href="assets/css/review.css" />
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/review.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
   <header class="header">
     <a href="index.html">
-    <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"  />
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
     </a>
     <span class="brand">Maylo</span>
     <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
       <span class="material-icons">menu</span>
     </button>
   </header>
-
   <div id="menuDrawer" class="drawer">
     <ul>
       <li><span class="material-icons">person</span> My Account</li>
@@ -52,11 +51,11 @@
 
       <div class="field-group">
         <label for="visitDate">Date of visit</label>
-        <input type="date" id="visitDate" name="visitDate" required />
+        <input type="date" id="visitDate" name="visitDate" required/>
         <div class="error-msg" data-for="visitDate"></div>
       </div>
 
-      <button type="submit" class="submit-btn">Submit Review</button>
+      <button type="submit" class="btn-primary submit-btn">Submit Review</button>
       <div class="success-msg hidden">Thank you! Your review has been submitted.</div>
     </form>
     <p class="note">Max 200 characters. Be respectful and constructive.</p>

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome • Maylo</title>
-  <link rel="stylesheet" href="assets/css/welcome.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="icon"  href="assets/maylo/maylo-logo.png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maylo – Welcome</title>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/welcome.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
-  <div class="welcome-container">
-    <img src="assets/maylo/welcome.png" alt="Maylo waving" class="maylo-welcome" />
+  <header class="header">
+    <a href="index.html">
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
+    </a>
+    <span class="brand">Maylo</span>
+  </header>
 
-    <h1 class="app-title">Maylo</h1>
-
-    <div class="button-group">
-      <a href="login.html" class="btn primary">Log In</a>
-      <a href="signup.html" class="btn outline">Sign Up</a>
+  <main class="container">
+    <h1>Welcome to Maylo!</h1>
+    <p>Find local services in your language. Get started by signing in or creating an account.</p>
+    <div class="buttons">
+      <a href="signup.html" class="btn-primary">Sign Up</a>
+      <a href="login.html" class="btn-secondary">Sign In</a>
     </div>
-  </div>
+  </main>
+
+  <script defer src="assets/js/welcome.js"></script>
 </body>
 </html>
