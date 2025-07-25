@@ -36,3 +36,7 @@ textarea { resize:none; height:120px; }
 /* === Success message === */
 .success-msg { color:#2e7d32; text-align:center; margin-top:1rem; }
 .hidden { display:none; }
+.logo {
+  width: 40px;
+  height: auto;
+}
