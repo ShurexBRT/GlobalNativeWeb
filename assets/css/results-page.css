@@ -19,6 +19,59 @@
   }
 }
 
+/* CTA icon buttons (no borders) */
+.actions .icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin-right: 0.6rem;
+}
+.actions .icon-btn .material-icons {
+  font-size: 1.4rem;
+  color: #0057ff;
+  transition: transform 0.2s;
+}
+.actions .icon-btn:hover .material-icons {
+  transform: scale(1.2);
+}
+
+/* Placeholder image styling & spacing */
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 1rem 0.8rem;
+  background: #f0f0f0;
+  border: 2px dashed #ddd;
+  padding: 2rem;
+  object-fit: contain;
+}
+
+/* Consistent padding inside card */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card-header,
+.subline,
+.tags,
+.address,
+.actions {
+  padding: 0 1rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .results-container { padding: 1rem; }
+  .cards { gap: 1rem; }
+  .card-header h3 { font-size: 1rem; }
+  .subline, .address { font-size: 0.85rem; }
+  .tags .pill { font-size: 0.8rem; padding: 0.3rem 0.6rem; }
+  .actions { gap: 0.5rem; }
+}
+
 /* Spinner */
 .spinner {
   text-align: center;

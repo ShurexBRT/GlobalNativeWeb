@@ -11,13 +11,29 @@
 .languages label { display:flex; align-items:center; gap:.4rem; }
 .languages input { transform:scale(1.1); }
 
-/* === Popular Branches === */
-.popular { padding:2rem 1rem; }
-.popular h2 { font-size:1.2rem; margin-bottom:1rem; }
-.branches { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; }
-.branch-card { background:#f8f9fc; border-radius:8px; padding:1rem; text-align:center; }
-.branch-card .material-icons { font-size:2rem; color:#0057ff; margin-bottom:.5rem; }
-.branch-card h3 { font-size:1rem; font-weight:600; }
+/* === Popular branches u dve kolone === */
+.branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1.2rem;
+}
+
+/* === Ikonice umesto <img> === */
+.branch-card img {
+  display: none;
+}
+.branch-card .material-icons {
+  font-size: 2.5rem;
+  color: #0057ff;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+.branch-card h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 
 /* === Results Preview === */
 .results { padding:2rem 1rem; }
