@@ -28,3 +28,7 @@ input[type="text"], input[type="email"], input[type="password"] { width: 100%; p
 .btn-primary:hover { background: #0046cc; }
 .btn-delete { background: none; border: none; color: #d32f2f; font-weight: 600; cursor: pointer; margin-top: .5rem; }
 .btn-logout { background: none; border: none; color: #0057ff; cursor: pointer; margin-top: .5rem; }
+.logo {
+  width: 40px;
+  height: auto;
+}
