@@ -1,87 +1,89 @@
 // assets/js/saved.js
 
+function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+
 document.addEventListener('DOMContentLoaded', () => {
-  const savedContainer = document.getElementById('savedContainer');
-  const emptyState = document.getElementById('emptyState');
-  const resetBtn = document.getElementById('resetSaved');
+  const container  = document.getElementById('savedContainer');
+  const empty      = document.getElementById('emptyState');
+  const resetBtn   = document.getElementById('resetSaved');
+  const savedIds   = JSON.parse(localStorage.getItem('saved')||'[]');
 
-  resetBtn.addEventListener('click', () => {
-    window.location.href = 'index.html';
-  });
+  resetBtn.addEventListener('click', ()=>{ location.href='index.html'; });
 
-  const savedIds = JSON.parse(localStorage.getItem('saved') || '[]');
   if (!savedIds.length) {
-    emptyState.classList.remove('hidden');
+    empty.classList.remove('hidden');
     return;
   }
 
   fetch('assets/company-list/firms.json')
-    .then(res => res.json())
+    .then(r=>r.json())
     .then(firms => {
-      const savedFirms = firms.filter(f => savedIds.includes(f.id));
+      const savedFirms = firms.filter(f=> savedIds.includes(f.id));
       if (!savedFirms.length) {
-        emptyState.classList.remove('hidden');
+        empty.classList.remove('hidden');
         return;
       }
 
+      // Count header
       const countEl = document.createElement('div');
       countEl.className = 'saved-count';
       countEl.textContent = `You have ${savedFirms.length} saved services`;
-      savedContainer.appendChild(countEl);
+      container.appendChild(countEl);
 
       savedFirms.forEach(firm => {
         const card = document.createElement('div');
         card.className = 'card';
         card.style.cursor = 'pointer';
+
+        // Navigate to profile unless clicking “Remove”
         card.addEventListener('click', e => {
           if (e.target.closest('.btn-remove')) return;
-          window.location.href = `profile.html?firma=${encodeURIComponent(firm.id)}`;
+          location.href = `profile.html?firma=${encodeURIComponent(firm.id)}`;
         });
 
-        const title = document.createElement('h2');
-        title.textContent = firm.naziv;
+        // Title & info
+        card.innerHTML = `
+          <h2>${firm.naziv}</h2>
+          <div class="info">${capitalize(firm.kategorija)}</div>
+          <div class="location">
+            <span class="material-icons">location_on</span> 
+            ${firm.grad}, ${firm.drzava}
+          </div>
+          <div class="rating">(${(firm.rating||0).toFixed(1)} · ${firm.reviewsCount||0} reviews)</div>
+        `;
 
-        const category = document.createElement('div');
-        category.className = 'info';
-        category.textContent = firm.kategorija.charAt(0).toUpperCase() + firm.kategorija.slice(1);
-
-        const location = document.createElement('div');
-        location.className = 'location';
-        location.innerHTML = `<span class="material-icons">location_on</span> ${firm.grad}, ${firm.drzava}`;
-
-        const rating = document.createElement('div');
-        rating.className = 'rating';
-        rating.textContent = `(${firm.rating?.toFixed(1) || '0.0'} · ${firm.reviewsCount || 0} reviews)`;
+        // Buttons
+        const actions = document.createElement('div');
+        actions.className = 'card-actions';
 
         const btnDetails = document.createElement('button');
-        btnDetails.textContent = 'Open details';
         btnDetails.className = 'btn-details';
+        btnDetails.textContent = 'Details';
         btnDetails.addEventListener('click', e => {
           e.stopPropagation();
-          window.location.href = `profile.html?firma=${encodeURIComponent(firm.id)}`;
+          location.href = `profile.html?firma=${encodeURIComponent(firm.id)}`;
         });
 
         const btnRemove = document.createElement('button');
-        btnRemove.textContent = 'Remove';
         btnRemove.className = 'btn-remove';
+        btnRemove.textContent = 'Remove';
         btnRemove.addEventListener('click', e => {
           e.stopPropagation();
           const idx = savedIds.indexOf(firm.id);
-          if (idx > -1) {
-            savedIds.splice(idx, 1);
-            localStorage.setItem('saved', JSON.stringify(savedIds));
-            card.remove();
-            countEl.textContent = `You have ${savedIds.length} saved services`;
-            if (!savedIds.length) emptyState.classList.remove('hidden');
-          }
+          savedIds.splice(idx, 1);
+          localStorage.setItem('saved', JSON.stringify(savedIds));
+          card.remove();
+          countEl.textContent = `You have ${savedIds.length} saved services`;
+          if (!savedIds.length) empty.classList.remove('hidden');
         });
 
-        card.append(title, category, location, rating, btnDetails, btnRemove);
-        savedContainer.appendChild(card);
+        actions.append(btnDetails, btnRemove);
+        card.appendChild(actions);
+        container.appendChild(card);
       });
     })
     .catch(err => {
-      console.error('Error loading firms:', err);
-      emptyState.classList.remove('hidden');
+      console.error('Error loading saved firms:', err);
+      empty.classList.remove('hidden');
     });
 });

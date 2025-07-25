@@ -1,83 +1,69 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  const branchSelect = document.getElementById('branchSelect');
+// assets/js/main.js
+
+const categoryIconMap = {
+  frizer: 'content_cut',
+  doktor: 'local_hospital',
+  pravnik: 'gavel',
+  stupak: 'build',
+  // add your other categories here...
+};
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const branchSelect  = document.getElementById('branchSelect');
   const countrySelect = document.getElementById('countrySelect');
-  const citySelect = document.getElementById('citySelect');
-  const popularGrid = document.getElementById('popularBranchesGrid');
+  const citySelect    = document.getElementById('citySelect');
+  const branchList    = document.getElementById('branchList');
 
-  let data = [];
-  try {
-    const response = await fetch('assets/company-list/firms.json');
-    data = await response.json();
-  } catch (err) {
-    console.error('Greška pri učitavanju firms.json:', err);
-    return;
-  }
+  fetch('assets/company-list/firms.json')
+    .then(r => r.json())
+    .then(firms => {
+      // 1) Unique lists
+      const branches = [...new Set(firms.map(f => f.kategorija))].sort();
+      const countries = [...new Set(firms.map(f => f.drzava))].sort();
+      const allCities = [...new Set(firms.map(f => f.grad))].sort();
 
-  // Populate branch select
-  const branches = [...new Set(data.map(item => item.kategorija))].sort();
-  branches.forEach(branch => {
-    const option = document.createElement('option');
-    option.value = branch;
-    option.textContent = branch.charAt(0).toUpperCase() + branch.slice(1);
-    branchSelect.appendChild(option);
-  });
+      // 2) Populate branch & country & city selects
+      branches.forEach(b => {
+        const o = new Option(capitalize(b), b);
+        branchSelect.add(o);
+      });
+      countries.forEach(c => {
+        const o = new Option(capitalize(c), c);
+        countrySelect.add(o);
+      });
+      allCities.forEach(c => {
+        const o = new Option(capitalize(c), c);
+        citySelect.add(o);
+      });
 
-  // Handle branch selection to populate countries
-  branchSelect.addEventListener('change', () => {
-    const selectedBranch = branchSelect.value;
-    const countries = [...new Set(
-      data
-        .filter(f => f.kategorija === selectedBranch)
-        .map(f => f.drzava)
-    )].sort();
+      // 3) When country changes, filter cities
+      countrySelect.addEventListener('change', () => {
+        const sel = countrySelect.value;
+        citySelect.length = 1; // keep “Any city”
+        const filtered = sel
+          ? firms.filter(f => f.drzava === sel).map(f => f.grad)
+          : allCities;
+        [...new Set(filtered)].sort().forEach(ct => {
+          citySelect.add(new Option(capitalize(ct), ct));
+        });
+      });
 
-    countrySelect.disabled = false;
-    countrySelect.innerHTML = '<option value="">Bilo koja država</option>' +
-      countries.map(c => `<option value="${c}">${c}</option>`).join('');
-
-    // Reset city select
-    citySelect.disabled = true;
-    citySelect.innerHTML = '<option value="">Bilo koji grad</option>';
-  });
-
-  // Handle country selection to populate cities
-  countrySelect.addEventListener('change', () => {
-    const selectedBranch = branchSelect.value;
-    const selectedCountry = countrySelect.value;
-    const cities = [...new Set(
-      data
-        .filter(f => f.kategorija === selectedBranch && f.drzava === selectedCountry)
-        .map(f => f.grad)
-    )].sort();
-
-    citySelect.disabled = false;
-    citySelect.innerHTML = '<option value="">Bilo koji grad</option>' +
-      cities.map(g => `<option value="${g}">${g}</option>`).join('');
-  });
-
-  // Populate popular branches grid
-  const popularBranches = ['advokat', 'doktor', 'veterinar', 'knjigovođa'];
-  popularBranches.forEach(branch => {
-    const item = document.createElement('div');
-    item.classList.add('popular-branch');
-
-    const icon = document.createElement('img');
-    icon.src = `assets/icons/${branch}.svg`;
-    icon.alt = branch.charAt(0).toUpperCase() + branch.slice(1);
-    icon.classList.add('popular-icon');
-
-    const label = document.createElement('span');
-    label.textContent = branch.charAt(0).toUpperCase() + branch.slice(1);
-
-    item.append(icon, label);
-    item.addEventListener('click', () => {
-      // Set branch and reset subsequent selects
-      branchSelect.value = branch;
-      branchSelect.dispatchEvent(new Event('change'));
-      // Submit form
-      document.getElementById('searchForm').submit();
-    });
-
-    popularGrid.appendChild(item);
-  });
+      // 4) Render top 4 popular branches
+      branches.slice(0, 4).forEach(b => {
+        const icon = categoryIconMap[b] || 'work';
+        const card = document.createElement('div');
+        card.className = 'branch-card';
+        card.innerHTML = `<i class="material-icons">${icon}</i><h3>${capitalize(b)}</h3>`;
+        card.addEventListener('click', () => {
+          branchSelect.value = b;
+          document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+        });
+        branchList.appendChild(card);
+      });
+    })
+    .catch(console.error);
 });
