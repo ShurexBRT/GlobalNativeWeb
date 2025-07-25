@@ -1,0 +1,93 @@
+/* assets/css/my-reviews.css */
+
+/* Base & layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f9fbff;
+  position: relative;
+  z-index: 2000;
+}
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Page title */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Reviews list */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Single review item */
+.review {
+  background: #f8f9fc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.review .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.review .meta span:last-child {
+  color: #ffaa00;
+}
+.review .text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #555;
+}
+.empty-state img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+.empty-state h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .container {
+    margin: 1.5rem auto;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  .review {
+    padding: 0.8rem;
+  }
+}

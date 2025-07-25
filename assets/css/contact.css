@@ -1,0 +1,90 @@
+/* assets/css/contact.css */
+
+/* Base & layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f9fbff;
+  position: relative;
+  z-index: 2000;
+}
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Page title */
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form label {
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.btn-primary {
+  background-color: #0057ff;
+  color: #ffffff;
+  padding: .9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0046cc;
+}
+
+/* Success message */
+.success-msg {
+  color: #2e7d32;
+  margin-top: 1rem;
+}
+/* Error message */
+.error-msg {
+  color: #d32f2f;
+  margin-top: .3rem;
+  font-size: .9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 1.5rem auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}

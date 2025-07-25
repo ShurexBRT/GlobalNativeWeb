@@ -1,0 +1,51 @@
+<!-- settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maylo – Settings</title>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="assets/css/settings.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html">
+      <img src="assets/maylo/maylo-logo.png" alt="Maylo logo" class="logo"/>
+    </a>
+    <span class="brand">Maylo</span>
+    <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+  <div id="menuDrawer" class="drawer">
+    <ul>
+      <li><span class="material-icons">person</span> My Account</li>
+      <li><span class="material-icons">bookmark</span> Saved Services</li>
+      <li><span class="material-icons">rate_review</span> My Reviews</li>
+      <li><span class="material-icons">settings</span> Settings</li>
+      <li><span class="material-icons">logout</span> Logout</li>
+    </ul>
+  </div>
+
+  <main class="container">
+    <h1>Settings</h1>
+    <form id="settingsForm">
+      <fieldset>
+        <legend>Notifications</legend>
+        <label><input type="checkbox" id="notifEmail"/> Email notifications</label>
+        <label><input type="checkbox" id="notifSMS"/> SMS notifications</label>
+      </fieldset>
+      <fieldset>
+        <legend>Language Preferences</legend>
+        <div id="settingsLangPills" class="language-pills"></div>
+      </fieldset>
+      <button type="submit" class="btn-primary">Save Settings</button>
+    </form>
+  </main>
+
+  <script defer src="assets/js/menu.js"></script>
+  <script defer src="assets/js/settings.js"></script>
+</body>
+</html>
